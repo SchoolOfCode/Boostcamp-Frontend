@@ -1,20 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TaskTypeScreen from './components/TaskTypeScreen';
+import OnScreen from './components/OnScreen';
+import OffScreen from './components/OffScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Task_Type_Screen"
+          component={TaskTypeScreen}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="On_Screen"
+          component={OnScreen}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Off_Screen"
+          component={OffScreen}
+          options={{ header: () => null }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
