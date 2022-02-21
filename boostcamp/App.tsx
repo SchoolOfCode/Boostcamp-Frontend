@@ -26,7 +26,7 @@ export default function App() {
         <Stack.Screen
           name="On_Screen_Short"
           component={OnScreenShortScreen}
-          // options={{ header: () => null }}
+          options={{ header: () => null }}
         />
         <Stack.Screen
           name="On_Screen_Medium"

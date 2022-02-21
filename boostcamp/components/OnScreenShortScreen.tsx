@@ -1,11 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Pressable, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
 
 export default function OnScreenShortScreen({ navigation }: any) {
   const onPressHandler = () => {
-    navigation.goBack();
+    navigation.navigate('Task_Type_Screen');
   };
 
   return (
@@ -14,10 +14,12 @@ export default function OnScreenShortScreen({ navigation }: any) {
       <TaskCard
         cardTitle="Open GoogleMaps and click anywhere. Enjoy exploring a new area for 5 minutes."
         cardText="This will benefit you by expanding your knowledge of random facts."
-        borderColor="#EF8D72"
         buttonText="Complete Task"
         onPressHandler={onPressHandler}
       />
+      <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
+        <Text style={styles.buttonText}>Complete Task</Text>
+      </Pressable>
     </SafeAreaView>
   );
 }
@@ -37,5 +39,23 @@ const styles = StyleSheet.create({
   star: {
     bottom: 28,
     right: 155,
+  },
+  button: {
+    backgroundColor: 'black',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 43,
+    width: 175,
+    borderWidth: 1.5,
+    borderRadius: 30,
+  },
+  buttonText: {
+    color: 'white',
+    display: 'flex',
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    fontSize: 22,
   },
 });
