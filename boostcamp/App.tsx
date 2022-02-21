@@ -3,9 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TaskTypeScreen from './components/TaskTypeScreen';
 import OnScreen from './components/OnScreen';
 import OffScreen from './components/OffScreen';
-import OnScreenShort from './components/OnScreenShort';
-import OnScreenMedium from './components/OnScreenMedium';
-import OnScreenLong from './components/OnScreenLong';
+import OnScreenShortScreen from './components/OnScreenShortScreen';
+import OnScreenMediumScreen from './components/OnScreenMediumScreen';
+import OnScreenLongScreen from './components/OnScreenLongScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,17 +25,17 @@ export default function App() {
         />
         <Stack.Screen
           name="On_Screen_Short"
-          component={OnScreenShort}
+          component={OnScreenShortScreen}
           // options={{ header: () => null }}
         />
         <Stack.Screen
           name="On_Screen_Medium"
-          component={OnScreenMedium}
+          component={OnScreenMediumScreen}
           // options={{ header: () => null }}
         />
         <Stack.Screen
           name="On_Screen_Long"
-          component={OnScreenLong}
+          component={OnScreenLongScreen}
           // options={{ header: () => null }}
         />
         <Stack.Screen
