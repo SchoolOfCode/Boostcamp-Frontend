@@ -9,7 +9,7 @@ export default function OnScreen({ navigation }: any) {
     // navigation.replace('On_Screen');
   };
   const onScreenMediumHandler = () => {
-    navigation.navigate('Off_Screen_Medium');
+    navigation.navigate('On_Screen_Medium');
     // navigation.replace('Off_Screen');
   };
   const onScreenLongHandler = () => {
