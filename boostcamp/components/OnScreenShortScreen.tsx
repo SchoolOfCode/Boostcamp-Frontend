@@ -15,13 +15,16 @@ export default function OnScreenShortScreen({ navigation }: any) {
 
   useEffect(() => {
     async function getTask() {
-      const response = await fetch(`${API_URL}onscreen/short`);
+      const response = await fetch(`${API_URL}tasks/onscreen/short`);
       const data = await response.json();
       setTask(data.payload);
       console.log(data.payload);
     }
     getTask();
-  });
+  }, []);
+
+  // cardTitle={task.instructions}
+  // cardText={task.benefits}
 
   return (
     <SafeAreaView style={styles.container}>
