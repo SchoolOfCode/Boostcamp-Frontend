@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   cardTextContainer: {
     width: 158,
     height: 50,
-    top: 40,
+    top: 45,
     left: 180,
     display: 'flex',
     flexDirection: 'row',
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     left: 180,
     top: 50,
     height: 43,
-    width: 185,
+    width: 175,
     borderWidth: 1.5,
     borderRadius: 12,
   },

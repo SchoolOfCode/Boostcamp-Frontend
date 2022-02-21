@@ -2,10 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TaskTypeScreen from './components/TaskTypeScreen';
 import OnScreen from './components/OnScreen';
-import OffScreen from './components/OffScreen';
 import OnScreenShortScreen from './components/OnScreenShortScreen';
 import OnScreenMediumScreen from './components/OnScreenMediumScreen';
 import OnScreenLongScreen from './components/OnScreenLongScreen';
+import OffScreen from './components/OffScreen';
 
 const Stack = createNativeStackNavigator();
 
