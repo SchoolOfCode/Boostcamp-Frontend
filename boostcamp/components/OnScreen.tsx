@@ -6,16 +6,12 @@ import Logo from './Logo';
 export default function OnScreen({ navigation }: any) {
   const onScreenShortHandler = () => {
     navigation.navigate('On_Screen_Short');
-    // navigation.replace('On_Screen');
   };
   const onScreenMediumHandler = () => {
     navigation.navigate('On_Screen_Medium');
-    // navigation.replace('Off_Screen');
   };
   const onScreenLongHandler = () => {
-    navigation.goBack();
-    // navigation.navigate('Off_Screen_Long');
-    // navigation.replace('Off_Screen');
+    navigation.navigate('On_Screen_Long');
   };
 
   return (
