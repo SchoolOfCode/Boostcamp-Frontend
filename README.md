@@ -5,6 +5,10 @@ Plan
 - Build User Flow Diagram (Optional)
 - Build Component Tree (Optional)
 
+- app
+  - tasktypescreen
+    - tasktypecard
+
 Implementation
 
 - Import figma images for task type, take duration and task

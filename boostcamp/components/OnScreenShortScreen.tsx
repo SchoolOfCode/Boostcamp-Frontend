@@ -3,12 +3,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
 import { useState, useEffect } from 'react';
-// import env from '../config';
-
-const API_URL = 'https://socboostcamp.herokuapp.com/';
+import { API_URL } from '@env';
 
 export default function OnScreenShortScreen({ navigation }: any) {
-  // const API_URL = env;
   const [task, setTask] = useState({
     task_instructions:
       'Open GoogleMaps and click anywhere. Enjoy exploring a new area for 5 minutes.',
@@ -20,15 +17,14 @@ export default function OnScreenShortScreen({ navigation }: any) {
     navigation.navigate('Task_Type_Screen');
   };
 
-  // useEffect(() => {
-  //   async function getTask() {
-  //     const response = await fetch(`${API_URL}tasks/onscreen/short`);
-  //     const data = await response.json();
-  //     setTask(data.payload[0]);
-  //     console.log(task);
-  //   }
-  //   getTask();
-  // }, []);
+  useEffect(() => {
+    async function getTask() {
+      const response = await fetch(`${API_URL}tasks/onscreen/short`);
+      const data = await response.json();
+      setTask(data.payload[0]);
+    }
+    getTask();
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
