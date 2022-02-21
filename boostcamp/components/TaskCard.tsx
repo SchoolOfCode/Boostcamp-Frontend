@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: 'bold',
     fontSize: 20,
-    top: 40,
+    top: 35,
     width: 270,
   },
   cardText: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     height: 50,
     fontWeight: '100',
     fontSize: 18,
-    top: 290,
+    top: 230,
     width: 278,
   },
 });
