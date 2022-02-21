@@ -5,7 +5,7 @@ import Logo from './Logo';
 import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
 
-export default function OnScreenShortLong({ navigation }: any) {
+export default function OffScreenLongScreen({ navigation }: any) {
   const [task, setTask] = useState({
     task_instructions:
       'Open GoogleMaps and click anywhere. Enjoy exploring a new area for 5 minutes.',
@@ -19,7 +19,7 @@ export default function OnScreenShortLong({ navigation }: any) {
 
   useEffect(() => {
     async function getTask() {
-      const response = await fetch(`${API_URL}tasks/onscreen/long`);
+      const response = await fetch(`${API_URL}tasks/offscreen/long`);
       const data = await response.json();
       setTask(data.payload[0]);
     }
