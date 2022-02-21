@@ -3,37 +3,39 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
 import { useState, useEffect } from 'react';
+// import env from '../config';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = 'https://socboostcamp.herokuapp.com/';
 
 export default function OnScreenShortScreen({ navigation }: any) {
-  const [task, setTask] = useState('');
+  // const API_URL = env;
+  const [task, setTask] = useState({
+    task_instructions:
+      'Open GoogleMaps and click anywhere. Enjoy exploring a new area for 5 minutes.',
+    task_benefits:
+      'This will benefit you by expanding your knowledge of random facts.',
+  });
 
   const onPressHandler = () => {
     navigation.navigate('Task_Type_Screen');
   };
 
-  useEffect(() => {
-    async function getTask() {
-      const response = await fetch(`${API_URL}tasks/onscreen/short`);
-      const data = await response.json();
-      setTask(data.payload);
-      console.log(data.payload);
-    }
-    getTask();
-  }, []);
-
-  // cardTitle={task.instructions}
-  // cardText={task.benefits}
+  // useEffect(() => {
+  //   async function getTask() {
+  //     const response = await fetch(`${API_URL}tasks/onscreen/short`);
+  //     const data = await response.json();
+  //     setTask(data.payload[0]);
+  //     console.log(task);
+  //   }
+  //   getTask();
+  // }, []);
 
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
       <TaskCard
-        cardTitle="Open GoogleMaps and click anywhere. Enjoy exploring a new area for 5 minutes."
-        cardText="This will benefit you by expanding your knowledge of random facts."
-        buttonText="Complete Task"
-        onPressHandler={onPressHandler}
+        cardTitle={task.task_instructions}
+        cardText={task.task_benefits}
       />
       <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
         <Text style={styles.buttonText}>Complete Task</Text>
