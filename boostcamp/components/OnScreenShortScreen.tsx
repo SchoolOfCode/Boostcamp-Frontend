@@ -2,11 +2,26 @@ import { StyleSheet, Pressable, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
+import { useState, useEffect } from 'react';
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 export default function OnScreenShortScreen({ navigation }: any) {
+  const [task, setTask] = useState('');
+
   const onPressHandler = () => {
     navigation.navigate('Task_Type_Screen');
   };
+
+  useEffect(() => {
+    async function getTask() {
+      const response = await fetch(`${API_URL}onscreen/short`);
+      const data = await response.json();
+      setTask(data.payload);
+      console.log(data.payload);
+    }
+    getTask();
+  });
 
   return (
     <SafeAreaView style={styles.container}>
