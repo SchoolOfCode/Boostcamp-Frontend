@@ -1,19 +1,57 @@
 # Boostcamp Frontend
 
-Plan
+## Component Tree
 
-- Build User Flow Diagram (Optional)
-- Build Component Tree (Optional)
+- App
+  - TaskTypeScreen
+    - Logo
+      - Star
+        - TaskTypeCard (OnScreen)
+        - TaskTypeCard (OffScreen)
+  - OnScreen
+    - Logo
+      - Star
+    - TaskDurationCard (Onscreen_Short)
+    - TaskDurationCard (Onscreen_Medium)
+    - TaskDurationCard (Onscreen_Long)
+  - OnScreenShortScreen
+    - Logo
+      - Star
+    - TaskCard
+  - OnScreenMediumScreen
+    - Logo
+      - Star
+    - TaskCard
+  - OnScreenLongScreen
+    - Logo
+      - Star
+    - TaskCard
+  - OffScreen
+    - Logo
+      - Star
+    - TaskDurationCard (Offscreen_Short)
+    - TaskDurationCard (Offscreen_Medium)
+    - TaskDurationCard (Offscreen_Long)
+  - OffScreenShortScreen
+    - Logo
+      - Star
+    - TaskCard
+  - OffScreenMediumScreen
+    - Logo
+      - Star
+    - TaskCard
+  - OffScreenLongScreen
+    - Logo
+      - Star
+    - TaskCard
 
-- app
-  - tasktypescreen
-    - tasktypecard
+MVP Tasks to be done:
 
-Implementation
+- Import images from figma to be inserted into TaskTypeCards, TaskDurationCards and TaskCards.
 
-- Import figma images for task type, take duration and task
-- Check view on multiple screens - change all units to relative if needed
-- Login page with Auth0 React Native
-- Create initials avatar component for top right corner
-- Typing of all components
-- Testing
+Bonus Tasks:
+
+- Login page with Auth0 React Native.
+- Initials Avatar to be created on all screens.
+- Typing of all components and props on all pages.
+- Testing of all components.
