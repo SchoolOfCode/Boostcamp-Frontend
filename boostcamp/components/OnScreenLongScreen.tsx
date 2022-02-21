@@ -7,10 +7,8 @@ import { API_URL } from '@env';
 
 export default function OnScreenShortLong({ navigation }: any) {
   const [task, setTask] = useState({
-    task_instructions:
-      'Open GoogleMaps and click anywhere. Enjoy exploring a new area for 5 minutes.',
-    task_benefits:
-      'This will benefit you by expanding your knowledge of random facts.',
+    task_instructions: '',
+    task_benefits: '',
   });
 
   const onPressHandler = () => {
