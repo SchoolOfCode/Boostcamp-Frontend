@@ -57,11 +57,13 @@
 
 MVP Tasks to be done:
 
-- Import images from figma to be inserted into TaskTypeCards, TaskDurationCards and TaskCards.
+- Import SVG images from figma to be inserted into TaskTypeCards, TaskDurationCards and TaskCards.
+- Create random task fetching functionality.
+- Change the safeareaview element when being viewed on android as it only works on ios devices.
 
 Bonus Tasks:
 
-- Add Star Functionality for task pages
+- Add Star Functionality for task pages.
 - Login page with Auth0 React Native.
 - Initials Avatar to be created on all screens.
 - Typing of all components and props on all pages.
