@@ -61,6 +61,7 @@ MVP Tasks to be done:
 
 Bonus Tasks:
 
+- Add Star Functionality for task pages
 - Login page with Auth0 React Native.
 - Initials Avatar to be created on all screens.
 - Typing of all components and props on all pages.
