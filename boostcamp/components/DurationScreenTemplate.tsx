@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskDurationCard from './TaskDurationCard';
 import Logo from './Logo';
 
-export default function DurationScreen({
+export default function DurationScreenTemplate({
   navigation,
   taskScreenType,
   cardText,

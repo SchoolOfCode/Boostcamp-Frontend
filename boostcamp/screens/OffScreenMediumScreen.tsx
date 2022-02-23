@@ -1,5 +1,10 @@
-import TaskScreen from '../components/TaskScreen';
+import TaskScreenTemplate from '../components/TaskScreenTemplate';
 
 export default function OffScreenMediumScreen({ navigation }: any) {
-  return <TaskScreen route="tasks/offscreen/medium" navigation={navigation} />;
+  return (
+    <TaskScreenTemplate
+      route="tasks/offscreen/medium"
+      navigation={navigation}
+    />
+  );
 }

@@ -5,7 +5,7 @@ import Logo from './Logo';
 import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
 
-export default function Screen({ navigation, route }: any) {
+export default function TaskScreenTemplate({ navigation, route }: any) {
   const [task, setTask] = useState({
     taskInstructions: '',
     taskBenefits: '',

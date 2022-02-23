@@ -1,8 +1,8 @@
-import DurationScreen from '../components/DurationScreen';
+import DurationScreenTemplate from '../components/DurationScreenTemplate';
 
 export default function OnScreen({ navigation }: any) {
   return (
-    <DurationScreen
+    <DurationScreenTemplate
       navigation={navigation}
       taskScreenType="Off"
       cardText="away from"

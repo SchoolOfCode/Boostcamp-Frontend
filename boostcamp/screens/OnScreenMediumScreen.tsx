@@ -1,5 +1,7 @@
-import TaskScreen from '../components/TaskScreen';
+import TaskScreenTemplate from '../components/TaskScreenTemplate';
 
 export default function OnScreenMediumScreen({ navigation }: any) {
-  return <TaskScreen route="tasks/onscreen/medium" navigation={navigation} />;
+  return (
+    <TaskScreenTemplate route="tasks/onscreen/medium" navigation={navigation} />
+  );
 }

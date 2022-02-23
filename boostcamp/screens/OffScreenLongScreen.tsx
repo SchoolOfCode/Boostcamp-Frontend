@@ -1,5 +1,7 @@
-import TaskScreen from '../components/TaskScreen';
+import TaskScreenTemplate from '../components/TaskScreenTemplate';
 
 export default function OffScreenLongScreen({ navigation }: any) {
-  return <TaskScreen route="tasks/offscreen/long" navigation={navigation} />;
+  return (
+    <TaskScreenTemplate route="tasks/offscreen/long" navigation={navigation} />
+  );
 }

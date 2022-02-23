@@ -1,5 +1,7 @@
-import TaskScreen from '../components/TaskScreen';
+import TaskScreenTemplate from '../components/TaskScreenTemplate';
 
 export default function OffScreenShortScreen({ navigation }: any) {
-  return <TaskScreen route="tasks/offscreen/short" navigation={navigation} />;
+  return (
+    <TaskScreenTemplate route="tasks/offscreen/short" navigation={navigation} />
+  );
 }
