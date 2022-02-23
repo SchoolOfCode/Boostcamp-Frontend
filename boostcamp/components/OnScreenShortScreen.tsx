@@ -19,7 +19,7 @@ export default function OnScreenShortScreen({ navigation }: any) {
     async function getTask() {
       const response = await fetch(`${API_URL}tasks/onscreen/short`);
       const data = await response.json();
-      setTask(data.payload[Math.random() * data.length]);
+      setTask(data.payload[Math.random() * data.payload.length]);
     }
     getTask();
   }, []);

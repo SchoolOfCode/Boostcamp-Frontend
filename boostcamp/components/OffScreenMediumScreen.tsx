@@ -19,7 +19,7 @@ export default function OffScreenMediumScreen({ navigation }: any) {
     async function getTask() {
       const response = await fetch(`${API_URL}tasks/offscreen/medium`);
       const data = await response.json();
-      setTask(data.payload[Math.random() * data.length]);
+      setTask(data.payload[Math.random() * data.payload.length]);
     }
     getTask();
   }, []);
