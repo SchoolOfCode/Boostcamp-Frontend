@@ -1,4 +1,4 @@
-import { StyleSheet, Pressable, Text } from 'react-native';
+import { StyleSheet, Pressable, Text, Platform, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
@@ -40,6 +40,7 @@ export default function OnScreenShortLong({ navigation }: any) {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     height: '100%',
     width: '100%',
     flex: 1,

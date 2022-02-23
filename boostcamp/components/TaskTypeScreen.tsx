@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskTypeCard from './TaskTypeCard';
 import Logo from './Logo';
@@ -33,6 +33,9 @@ export default function TaskTypeScreen({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
+  AndroidSafeArea: {
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
   container: {
     height: '100%',
     width: '100%',
