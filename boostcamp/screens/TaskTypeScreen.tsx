@@ -1,7 +1,7 @@
 import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import TaskTypeCard from './TaskTypeCard';
-import Logo from './Logo';
+import TaskTypeCard from '../components/TaskTypeCard';
+import Logo from '../components/Logo';
 
 export default function TaskTypeScreen({ navigation }: any) {
   const onScreenHandler = () => {

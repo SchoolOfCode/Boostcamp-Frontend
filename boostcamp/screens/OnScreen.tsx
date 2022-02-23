@@ -1,11 +1,11 @@
-import DurationScreen from './DurationScreen';
+import DurationScreen from '../components/DurationScreen';
 
 export default function OnScreen({ navigation }: any) {
   return (
     <DurationScreen
       navigation={navigation}
-      taskScreenType="Off"
-      cardText="away from"
+      taskScreenType="On"
+      cardText="that you can do on"
     />
   );
 }
