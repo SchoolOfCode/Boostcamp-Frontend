@@ -7,8 +7,8 @@ import { API_URL } from '@env';
 
 export default function OnScreenShortMedium({ navigation }: any) {
   const [task, setTask] = useState({
-    task_instructions: '',
-    task_benefits: '',
+    taskInstructions: '',
+    taskBenefits: '',
   });
 
   const onPressHandler = () => {
@@ -28,8 +28,8 @@ export default function OnScreenShortMedium({ navigation }: any) {
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
       <TaskCard
-        cardTitle={task.task_instructions}
-        cardText={task.task_benefits}
+        cardTitle={task.taskInstructions}
+        cardText={task.taskBenefits}
       />
       <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
         <Text style={styles.buttonText}>Complete Task</Text>
