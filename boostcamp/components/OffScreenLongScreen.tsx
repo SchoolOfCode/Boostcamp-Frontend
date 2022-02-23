@@ -15,14 +15,20 @@ export default function OffScreenLongScreen({ navigation }: any) {
     navigation.navigate('Task_Type_Screen');
   };
 
-  useEffect(() => {
-    async function getTask() {
-      const response = await fetch(`${API_URL}tasks/offscreen/long`);
-      const data = await response.json();
-      setTask(data.payload[Math.random() * data.payload.length]);
-    }
-    getTask();
-  }, []);
+  function useFetch() {
+    useEffect(() => {
+      async function getTask() {
+        const response = await fetch(`${API_URL}tasks/offscreen/long`);
+        const data = await response.json();
+        const tasks = data.payload;
+        const randomTaskIndex = Math.floor(Math.random() * tasks.length);
+        setTask(data.payload[randomTaskIndex]);
+      }
+      getTask();
+    }, []);
+  }
+
+  useFetch();
 
   return (
     <SafeAreaView style={styles.container}>
