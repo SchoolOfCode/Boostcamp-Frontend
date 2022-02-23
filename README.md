@@ -57,9 +57,8 @@
 
 ## Mvp Tasks:
 
+- Add tasks to the database.
 - Import SVG images from figma to be inserted into TaskTypeCards, TaskDurationCards and TaskCards.
-- Create random task fetching functionality.
-- Change the safeareaview element when being viewed on android as it only works on ios devices.
 
 ## Bonus Tasks:
 
