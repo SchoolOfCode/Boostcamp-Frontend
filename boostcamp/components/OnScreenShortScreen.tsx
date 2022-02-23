@@ -22,7 +22,7 @@ export default function OnScreenShortScreen({ navigation }: any) {
         const data = await response.json();
         const tasks = data.payload;
         const randomTaskIndex = Math.floor(Math.random() * tasks.length);
-        setTask(data.payload[randomTaskIndex]);
+        setTask(tasks[randomTaskIndex]);
       }
       getTask();
     }, []);
