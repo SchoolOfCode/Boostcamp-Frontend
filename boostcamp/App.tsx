@@ -1,14 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TaskTypeScreen from './components/TaskTypeScreen';
-import OnScreen from './components/OnScreen';
-import OnScreenShortScreen from './components/OnScreenShortScreen';
-import OnScreenMediumScreen from './components/OnScreenMediumScreen';
-import OnScreenLongScreen from './components/OnScreenLongScreen';
-import OffScreenShortScreen from './components/OffScreenShortScreen';
-import OffScreenMediumScreen from './components/OffScreenMediumScreen';
-import OffScreenLongScreen from './components/OffScreenLongScreen';
-import OffScreen from './components/OffScreen';
+import LoginScreen from './screens/LoginScreen';
+import TaskTypeScreen from './screens/TaskTypeScreen';
+import OnScreen from './screens/OnScreen';
+import OnScreenShortScreen from './screens/OnScreenShortScreen';
+import OnScreenMediumScreen from './screens/OnScreenMediumScreen';
+import OnScreenLongScreen from './screens/OnScreenLongScreen';
+import OffScreen from './screens/OffScreen';
+import OffScreenShortScreen from './screens/OffScreenShortScreen';
+import OffScreenMediumScreen from './screens/OffScreenMediumScreen';
+import OffScreenLongScreen from './screens/OffScreenLongScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Login_Screen"
+          component={LoginScreen}
+          options={{ header: () => null }}
+        />
         <Stack.Screen
           name="Task_Type_Screen"
           component={TaskTypeScreen}

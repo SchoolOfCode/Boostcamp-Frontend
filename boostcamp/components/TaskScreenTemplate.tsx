@@ -4,8 +4,9 @@ import TaskCard from './TaskCard';
 import Logo from './Logo';
 import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
+import Avatar from './Avatar';
 
-export default function OffScreenMediumScreen({ navigation }: any) {
+export default function TaskScreenTemplate({ navigation, route }: any) {
   const [task, setTask] = useState({
     taskInstructions: '',
     taskBenefits: '',
@@ -18,7 +19,7 @@ export default function OffScreenMediumScreen({ navigation }: any) {
   function useFetch() {
     useEffect(() => {
       async function getTask() {
-        const response = await fetch(`${API_URL}tasks/offscreen/medium`);
+        const response = await fetch(`${API_URL}${route}`);
         const data = await response.json();
         const tasks = data.payload;
         const randomTaskIndex = Math.floor(Math.random() * tasks.length);
@@ -33,12 +34,13 @@ export default function OffScreenMediumScreen({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+      <Avatar avatarPosition={styles.avatarPosition} />
       <TaskCard
         cardTitle={task.taskInstructions}
         cardText={task.taskBenefits}
-        svgImage = "mediumImageOffScreen"
+        svgImage={"longImageOnScreen"}
       />
-      <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
+      <Pressable onPress={onPressHandler} style={styles.button}>
         <Text style={styles.buttonText}>Complete Task</Text>
       </Pressable>
     </SafeAreaView>
@@ -80,4 +82,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 22,
   },
+  avatarPosition: { top: 64, right: 30 },
 });

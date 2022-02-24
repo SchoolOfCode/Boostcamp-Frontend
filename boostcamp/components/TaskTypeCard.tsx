@@ -1,7 +1,6 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import OnScreenSVG from "../SVG_Illustrations/Onscreen.svg";
-import OffScreenSVG from "../SVG_Illustrations/Writing.svg";
-
+import OnScreenSVG from '../SVG_Illustrations/Onscreen.svg';
+import OffScreenSVG from '../SVG_Illustrations/Writing.svg';
 
 export default function TaskTypeCard({
   onPressHandler,
@@ -11,13 +10,13 @@ export default function TaskTypeCard({
   svgImage,
 }: any) {
   return (
-
     <View style={styles.card}>
-      <> 
-        {svgImage === "offscreen"
-        ?<OffScreenSVG style = {styles.svgImage} width={170} height={170}/>
-        :<OnScreenSVG style = {styles.svgImage} width={170} height={170}/>
-}
+      <>
+        {svgImage === 'offscreen' ? (
+          <OffScreenSVG style={styles.svgImage} width={170} height={170} />
+        ) : (
+          <OnScreenSVG style={styles.svgImage} width={170} height={170} />
+        )}
       </>
       {/* <OnScreenSVG style={styles.svgImage} width={170} height={170}/>
       <OffScreenSVG style={styles.svgImagetwo} width={170} height={170}/> */}
@@ -25,7 +24,7 @@ export default function TaskTypeCard({
       <Text style={styles.cardText}>{cardText}</Text>
       <Pressable
         onPress={onPressHandler}
-        style={{ ...styles.button, borderColor: borderColor }}
+        style={[styles.button, { borderColor: borderColor }]}
       >
         <Text style={styles.buttonText}>Choose Me</Text>
       </Pressable>
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   svgImage: {
-    position: "absolute",
+    position: 'absolute',
     fontSize: 20,
     top: 0,
     left: 120,

@@ -2,44 +2,51 @@ import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskDurationCard from './TaskDurationCard';
 import Logo from './Logo';
+import Avatar from './Avatar';
 
-export default function OffScreen({ navigation }: any) {
-  const offScreenShortHandler = () => {
-    navigation.navigate('Off_Screen_Short');
+export default function DurationScreenTemplate({
+  navigation,
+  taskScreenType,
+  cardText,
+  svgImage,
+}: any) {
+  const ShortHandler = () => {
+    navigation.navigate(`${taskScreenType}_Screen_Short`);
   };
-  const offScreenMediumHandler = () => {
-    navigation.navigate('Off_Screen_Medium');
+  const MediumHandler = () => {
+    navigation.navigate(`${taskScreenType}_Screen_Medium`);
   };
-  const offScreenLongHandler = () => {
-    navigation.navigate('Off_Screen_Long');
+  const LongHandler = () => {
+    navigation.navigate(`${taskScreenType}_Screen_Long`);
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+      <Avatar avatarPosition={styles.avatarPosition} />
       <TaskDurationCard
-        onPressHandler={offScreenShortHandler}
+        onPressHandler={ShortHandler}
         cardTitle="Short Task"
-        cardText="A short task away from your screen"
+        cardText={`A short task ${cardText} your screen`}
         borderColor="#EF8D72"
         buttonText="5-10 min."
-        svgImage = "shortImage"
+        svgImage="shortImage"
       />
       <TaskDurationCard
-        onPressHandler={offScreenMediumHandler}
+        onPressHandler={MediumHandler}
         cardTitle="Medium Task"
-        cardText="A medium task away from your screen"
+        cardText={`A medium task ${cardText} your screen`}
         borderColor="#5C60F4"
         buttonText="30-60 min."
-        svgImage = "mediumImage"
+        svgImage="mediumImage"
       />
       <TaskDurationCard
-        onPressHandler={offScreenLongHandler}
+        onPressHandler={LongHandler}
         cardTitle="Long Task"
-        cardText="A long task away from your screen"
+        cardText={`A long task ${cardText} your screen`}
         borderColor="#EC6364"
         buttonText="Abstract"
-        svgImage = "longImage"
+        svgImage="longImage"
       />
     </SafeAreaView>
   );
@@ -62,4 +69,5 @@ const styles = StyleSheet.create({
     bottom: 28,
     right: 155,
   },
+  avatarPosition: { top: 62, right: 30 },
 });
