@@ -11,9 +11,16 @@ export default function TaskTypeCard({
   svgImage,
 }: any) {
   return (
+
     <View style={styles.card}>
-      <OnScreenSVG style={styles.svgImage} width={170} height={170}/>
-      <OffScreenSVG style={styles.svgImage} width={170} height={170}/>
+      <> 
+        {svgImage
+        ?<OffScreenSVG style = {styles.svgImage} width={170} height={170}/>
+        :<OnScreenSVG style = {styles.svgImage} width={170} height={170}/>
+}
+      </>
+      {/* <OnScreenSVG style={styles.svgImage} width={170} height={170}/>
+      <OffScreenSVG style={styles.svgImagetwo} width={170} height={170}/> */}
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <Text style={styles.cardText}>{cardText}</Text>
       <Pressable
@@ -40,6 +47,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     top: 0,
     left: 120,
+  },
+
+  svgImagetwo: {
+    position: "absolute",
+    fontSize: 20,
+    top: 0,
+    left: 0,
   },
   cardTitle: {
     fontFamily: 'Avenir',
