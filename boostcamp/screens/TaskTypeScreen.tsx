@@ -1,21 +1,38 @@
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import {
+  StyleSheet,
+  Platform,
+  StatusBar,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskTypeCard from '../components/TaskTypeCard';
 import Logo from '../components/Logo';
+import { signOut, getAuth } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../firebase';
 
 export default function TaskTypeScreen({ navigation }: any) {
   const onScreenHandler = () => {
     navigation.navigate('On_Screen');
-    // navigation.replace('On_Screen');
   };
   const offScreenHandler = () => {
     navigation.navigate('Off_Screen');
-    // navigation.replace('Off_Screen');
+  };
+
+  const app = initializeApp(firebaseConfig);
+
+  const handleSignOut = () => {
+    signOut(getAuth(app));
+    navigation.replace('Login_Screen');
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+        <Text style={styles.buttonText}>Sign Out</Text>
+      </TouchableOpacity>
       <TaskTypeCard
         onPressHandler={onScreenHandler}
         cardTitle="On Screen"
@@ -35,6 +52,26 @@ export default function TaskTypeScreen({ navigation }: any) {
 const styles = StyleSheet.create({
   AndroidSafeArea: {
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
+  button: {
+    position: 'absolute',
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 43,
+    width: 175,
+    borderWidth: 1.5,
+    borderRadius: 30,
+    top: 84,
+    right: 30,
+  },
+  buttonText: {
+    color: 'white',
+    display: 'flex',
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    fontSize: 22,
   },
   container: {
     height: '100%',
