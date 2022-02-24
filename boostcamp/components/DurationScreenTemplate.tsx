@@ -8,7 +8,6 @@ export default function DurationScreenTemplate({
   navigation,
   taskScreenType,
   cardText,
-  svgImage,
 }: any) {
   const ShortHandler = () => {
     navigation.navigate(`${taskScreenType}_Screen_Short`);

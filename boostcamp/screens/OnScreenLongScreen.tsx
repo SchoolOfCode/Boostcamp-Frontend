@@ -5,7 +5,7 @@ export default function OnScreenLongScreen({ navigation }: any) {
     <TaskScreenTemplate
       route="tasks/onscreen/long"
       navigation={navigation}
-      svgImage={'longImageOnScreen'}
+      svgImage="longImageOnScreen"
     />
   );
 }

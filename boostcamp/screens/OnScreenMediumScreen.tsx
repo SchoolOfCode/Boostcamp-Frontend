@@ -5,7 +5,7 @@ export default function OnScreenMediumScreen({ navigation }: any) {
     <TaskScreenTemplate
       route="tasks/onscreen/medium"
       navigation={navigation}
-      svgImage={'mediumImageOnScreen'}
+      svgImage="mediumImageOnScreen"
     />
   );
 }

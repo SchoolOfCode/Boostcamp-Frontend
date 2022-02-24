@@ -6,7 +6,11 @@ import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
 import Avatar from './Avatar';
 
-export default function TaskScreenTemplate({ navigation, route }: any) {
+export default function TaskScreenTemplate({
+  navigation,
+  route,
+  svgImage,
+}: any) {
   const [task, setTask] = useState({
     taskInstructions: '',
     taskBenefits: '',
@@ -38,7 +42,7 @@ export default function TaskScreenTemplate({ navigation, route }: any) {
       <TaskCard
         cardTitle={task.taskInstructions}
         cardText={task.taskBenefits}
-        svgImage={"longImageOnScreen"}
+        svgImage={svgImage}
       />
       <Pressable onPress={onPressHandler} style={styles.button}>
         <Text style={styles.buttonText}>Complete Task</Text>
