@@ -12,8 +12,8 @@ export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <>
       {svgImage ==="shortImageOnScreen"
-        ?<OnscreenShortSVG style = {styles.svgImage} width={170} height={170}/>:
-        svgImage === "mediumImageOnScreen" ? <OnscreenMediumSVG style = {styles.svgImage} width={140} height={140}/> : svgImage==="longImageOnScreen"?<OnscreenLongSVG style = {styles.svgImage} width={140} height={140}/>:svgImage==="shortImageOffScreen"?<OffscreenShortSVG style ={styles.svgImage} width={170} height={170}/>: svgImage==="mediumImageOffScreen"?<OffscreenMediumSVG style={styles.svgImage}width={170} height={170}/>:<OffscreenLongSVG style={styles.svgImage}width={170} height={170}/>
+        ?<OnscreenShortSVG style = {styles.svgImage} width={240} height={240}/>:
+        svgImage === "mediumImageOnScreen" ? <OnscreenMediumSVG style = {styles.svgImage} width={240} height={240}/> : svgImage==="longImageOnScreen"?<OnscreenLongSVG style = {styles.svgImage} width={240} height={240}/>:svgImage==="shortImageOffScreen"?<OffscreenShortSVG style ={styles.svgImage} width={240} height={240}/>: svgImage==="mediumImageOffScreen"?<OffscreenMediumSVG style={styles.svgImage}width={240} height={240}/>:<OffscreenLongSVG style={styles.svgImage}width={240} height={240}/>
 }</>
       <Text style={styles.cardText}>{cardText}</Text>
     </View>
@@ -30,10 +30,9 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   svgImage: {
-    position: "absolute",
     fontSize: 20,
     top: 20,
-    left: 15,
+    left: 60,
   },
   cardTitle: {
     alignSelf: 'center',

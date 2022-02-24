@@ -14,7 +14,7 @@ export default function TaskTypeCard({
 
     <View style={styles.card}>
       <> 
-        {svgImage
+        {svgImage === "offscreen"
         ?<OffScreenSVG style = {styles.svgImage} width={170} height={170}/>
         :<OnScreenSVG style = {styles.svgImage} width={170} height={170}/>
 }
@@ -47,13 +47,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     top: 0,
     left: 120,
-  },
-
-  svgImagetwo: {
-    position: "absolute",
-    fontSize: 20,
-    top: 0,
-    left: 0,
   },
   cardTitle: {
     fontFamily: 'Avenir',
