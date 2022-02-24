@@ -23,6 +23,7 @@ export default function OnScreen({ navigation }: any) {
         cardText="A short task that you can do on your screen"
         borderColor="#EF8D72"
         buttonText="5-10 min."
+        svgImage={"shortImage"}
       />
       <TaskDurationCard
         onPressHandler={onScreenMediumHandler}
@@ -30,6 +31,7 @@ export default function OnScreen({ navigation }: any) {
         cardText="A medium task that you can do on your screen"
         borderColor="#5C60F4"
         buttonText="30-60 min."
+        svgImage={"mediumImage"}
       />
       <TaskDurationCard
         onPressHandler={onScreenLongHandler}
@@ -37,6 +39,7 @@ export default function OnScreen({ navigation }: any) {
         cardText="A long task that you can do on your screen"
         borderColor="#EC6364"
         buttonText="Abstract"
+        svgImage={"longImage"}
       />
     </SafeAreaView>
   );
