@@ -19,11 +19,10 @@ export default function TaskTypeScreen({ navigation }: any) {
   const offScreenHandler = () => {
     navigation.navigate('Off_Screen');
   };
-
   const app = initializeApp(firebaseConfig);
-
+  const auth = getAuth(app);
   const handleSignOut = () => {
-    signOut(getAuth(app));
+    signOut(auth);
     navigation.replace('Login_Screen');
   };
 
