@@ -30,8 +30,8 @@ export default function TaskTypeScreen({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
-      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
-        <Text style={styles.buttonText}>Sign Out</Text>
+      <TouchableOpacity onPress={handleSignOut} style={styles.avatar}>
+        <Text style={styles.avatarText}>RM</Text>
       </TouchableOpacity>
       <TaskTypeCard
         onPressHandler={onScreenHandler}
@@ -53,19 +53,19 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
-  button: {
+  avatar: {
     position: 'absolute',
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 43,
-    width: 175,
+    height: 50,
+    width: 52,
     borderWidth: 1.5,
     borderRadius: 30,
-    top: 84,
+    top: 80,
     right: 30,
   },
-  buttonText: {
+  avatarText: {
     color: 'white',
     display: 'flex',
     textAlign: 'center',
