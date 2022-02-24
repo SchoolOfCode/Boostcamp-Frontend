@@ -36,6 +36,7 @@ export default function OnScreenShortMedium({ navigation }: any) {
       <TaskCard
         cardTitle={task.taskInstructions}
         cardText={task.taskBenefits}
+        svgImage = {"mediumImageOnScreen"}
       />
       <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
         <Text style={styles.buttonText}>Complete Task</Text>

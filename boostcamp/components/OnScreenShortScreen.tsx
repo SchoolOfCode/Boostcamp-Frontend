@@ -5,6 +5,7 @@ import Logo from './Logo';
 import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
 
+
 export default function OnScreenShortScreen({ navigation }: any) {
   const [task, setTask] = useState({
     taskInstructions: '',
@@ -36,6 +37,7 @@ export default function OnScreenShortScreen({ navigation }: any) {
       <TaskCard
         cardTitle={task.taskInstructions}
         cardText={task.taskBenefits}
+        svgImage = "shortImageOnScreen"
       />
       <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
         <Text style={styles.buttonText}>Complete Task</Text>

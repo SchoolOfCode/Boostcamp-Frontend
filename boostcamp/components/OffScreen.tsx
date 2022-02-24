@@ -23,6 +23,7 @@ export default function OffScreen({ navigation }: any) {
         cardText="A short task away from your screen"
         borderColor="#EF8D72"
         buttonText="5-10 min."
+        svgImage = "shortImage"
       />
       <TaskDurationCard
         onPressHandler={offScreenMediumHandler}
@@ -30,6 +31,7 @@ export default function OffScreen({ navigation }: any) {
         cardText="A medium task away from your screen"
         borderColor="#5C60F4"
         buttonText="30-60 min."
+        svgImage = "mediumImage"
       />
       <TaskDurationCard
         onPressHandler={offScreenLongHandler}
@@ -37,6 +39,7 @@ export default function OffScreen({ navigation }: any) {
         cardText="A long task away from your screen"
         borderColor="#EC6364"
         buttonText="Abstract"
+        svgImage = "longImage"
       />
     </SafeAreaView>
   );
