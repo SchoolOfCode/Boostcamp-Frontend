@@ -2,6 +2,7 @@ import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskDurationCard from './TaskDurationCard';
 import Logo from './Logo';
+import Avatar from './Avatar';
 
 export default function OffScreen({ navigation }: any) {
   const offScreenShortHandler = () => {
@@ -17,6 +18,7 @@ export default function OffScreen({ navigation }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+      <Avatar avatarPosition={styles.avatarPosition} />
       <TaskDurationCard
         onPressHandler={offScreenShortHandler}
         cardTitle="Short Task"
@@ -62,4 +64,5 @@ const styles = StyleSheet.create({
     bottom: 28,
     right: 155,
   },
+  avatarPosition: { top: 62, right: 30 },
 });
