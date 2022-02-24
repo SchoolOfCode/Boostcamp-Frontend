@@ -1,16 +1,8 @@
-import {
-  StyleSheet,
-  Platform,
-  StatusBar,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskTypeCard from '../components/TaskTypeCard';
 import Logo from '../components/Logo';
-import { signOut, getAuth } from 'firebase/auth';
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../firebase';
+import Avatar from '../components/Avatar';
 
 export default function TaskTypeScreen({ navigation }: any) {
   const onScreenHandler = () => {
@@ -19,19 +11,11 @@ export default function TaskTypeScreen({ navigation }: any) {
   const offScreenHandler = () => {
     navigation.navigate('Off_Screen');
   };
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const handleSignOut = () => {
-    signOut(auth);
-    navigation.replace('Login_Screen');
-  };
 
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
-      <TouchableOpacity onPress={handleSignOut} style={styles.avatar}>
-        <Text style={styles.avatarText}>Sign Out</Text>
-      </TouchableOpacity>
+      <Avatar avatarPosition={styles.avatarPosition} />
       <TaskTypeCard
         onPressHandler={onScreenHandler}
         cardTitle="On Screen"
@@ -52,26 +36,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
-  avatar: {
-    position: 'absolute',
-    backgroundColor: 'black',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 50,
-    width: 52,
-    borderWidth: 1.5,
-    borderRadius: 30,
-    top: 80,
-    right: 30,
-  },
-  avatarText: {
-    color: 'white',
-    display: 'flex',
-    textAlign: 'center',
-    fontFamily: 'Avenir',
-    fontWeight: 'bold',
-    fontSize: 15,
-  },
   container: {
     height: '100%',
     width: '100%',
@@ -88,4 +52,5 @@ const styles = StyleSheet.create({
     bottom: 118,
     right: 155,
   },
+  avatarPosition: { top: 80, right: 30 },
 });

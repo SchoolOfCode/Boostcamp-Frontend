@@ -30,7 +30,7 @@ export default function TaskDurationCard({
       </View>
       <Pressable
         onPress={onPressHandler}
-        style={{ ...styles.button, borderColor: borderColor }}
+        style={[styles.button, { borderColor: borderColor }]}
       >
         <Clock style={styles.clock} />
         <Text style={styles.buttonText}>{buttonText}</Text>

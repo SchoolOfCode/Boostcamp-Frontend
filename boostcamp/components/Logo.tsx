@@ -22,7 +22,7 @@ export default function Logo({ boostcampStyle, starStyle }: any) {
   return (
     <SafeAreaView>
       <Star />
-      <Text style={{ ...styles.boostcamp, ...boostcampStyle }}>BOOSTCAMP</Text>
+      <Text style={[styles.boostcamp, boostcampStyle]}>BOOSTCAMP</Text>
     </SafeAreaView>
   );
 }

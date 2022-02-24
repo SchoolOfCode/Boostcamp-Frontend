@@ -37,7 +37,7 @@ export default function TaskScreenTemplate({ navigation, route }: any) {
         cardTitle={task.taskInstructions}
         cardText={task.taskBenefits}
       />
-      <Pressable onPress={onPressHandler} style={{ ...styles.button }}>
+      <Pressable onPress={onPressHandler} style={styles.button}>
         <Text style={styles.buttonText}>Complete Task</Text>
       </Pressable>
     </SafeAreaView>

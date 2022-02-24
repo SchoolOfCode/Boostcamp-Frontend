@@ -12,7 +12,7 @@ export default function TaskTypeCard({
       <Text style={styles.cardText}>{cardText}</Text>
       <Pressable
         onPress={onPressHandler}
-        style={{ ...styles.button, borderColor: borderColor }}
+        style={[styles.button, { borderColor: borderColor }]}
       >
         <Text style={styles.buttonText}>Choose Me</Text>
       </Pressable>
