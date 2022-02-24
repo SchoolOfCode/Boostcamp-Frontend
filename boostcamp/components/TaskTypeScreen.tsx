@@ -21,14 +21,14 @@ export default function TaskTypeScreen({ navigation }: any) {
         cardTitle="On Screen"
         cardText="A task that involves looking at your screen"
         borderColor="#EF86A0"
-        svgImage = {false}
+        svgImage = "onscreen"
       />
       <TaskTypeCard
         onPressHandler={offScreenHandler}
         cardTitle="Off Screen"
         cardText="A task to take away from your screen"
         borderColor="#64FCD9"
-        svgImage={true}
+        svgImage= "offscreen"
       />
     </SafeAreaView>
   );
