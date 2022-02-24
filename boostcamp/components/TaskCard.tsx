@@ -1,7 +1,7 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import OnscreenShortSVG from '../SVG_Illustrations/OnScreenImages/OnscreenShort.svg';
-import OnscreenMediumSVG from '../SVG_Illustrations/OnScreenImages/OnscreenMedium.svg';
-import OnscreenLongSVG from '../SVG_Illustrations/OnScreenImages/OnscreenLong.svg';
+import OnscreenShortSVG from '../SVG_Illustrations/onScreenImages/OnscreenShort.svg';
+import OnscreenMediumSVG from '../SVG_Illustrations/onScreenImages/OnscreenMedium.svg';
+import OnscreenLongSVG from '../SVG_Illustrations/onScreenImages/OnscreenLong.svg';
 
 import OffscreenShortSVG from '../SVG_Illustrations/offScreenImages/WritingShort.svg';
 import OffscreenMediumSVG from '../SVG_Illustrations/offScreenImages/WritingMedium.svg';
