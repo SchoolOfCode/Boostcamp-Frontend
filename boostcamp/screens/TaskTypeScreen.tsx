@@ -31,7 +31,7 @@ export default function TaskTypeScreen({ navigation }: any) {
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
       <TouchableOpacity onPress={handleSignOut} style={styles.avatar}>
-        <Text style={styles.avatarText}>RM</Text>
+        <Text style={styles.avatarText}>Sign Out</Text>
       </TouchableOpacity>
       <TaskTypeCard
         onPressHandler={onScreenHandler}
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Avenir',
     fontWeight: 'bold',
-    fontSize: 22,
+    fontSize: 15,
   },
   container: {
     height: '100%',
