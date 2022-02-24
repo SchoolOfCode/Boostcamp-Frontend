@@ -4,6 +4,7 @@ import TaskCard from './TaskCard';
 import Logo from './Logo';
 import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
+import Avatar from './Avatar';
 
 export default function TaskScreenTemplate({ navigation, route }: any) {
   const [task, setTask] = useState({
@@ -33,6 +34,7 @@ export default function TaskScreenTemplate({ navigation, route }: any) {
   return (
     <SafeAreaView style={styles.container}>
       <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+      <Avatar avatarPosition={styles.avatarPosition} />
       <TaskCard
         cardTitle={task.taskInstructions}
         cardText={task.taskBenefits}
@@ -79,4 +81,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 22,
   },
+  avatarPosition: { top: 64, right: 30 },
 });
