@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './screens/LoginScreen';
 import TaskTypeScreen from './screens/TaskTypeScreen';
 import OnScreen from './screens/OnScreen';
 import OnScreenShortScreen from './screens/OnScreenShortScreen';
@@ -16,6 +17,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="Login_Screen"
+          component={LoginScreen}
+          options={{ header: () => null }}
+        />
         <Stack.Screen
           name="Task_Type_Screen"
           component={TaskTypeScreen}
