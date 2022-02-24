@@ -3,14 +3,14 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase';
 import { getAuth, signOut } from 'firebase/auth';
 
-export default function Avatar({ navigation, avatarPosition }: any) {
+export default function Avatar({ avatarPosition }: any) {
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  const handleSignOut = () => {
-    signOut(auth);
-    navigation.replace('Login_Screen');
-  };
+  // const handleSignOut = () => {
+  //   signOut(auth);
+  //   navigation.replace('Login_Screen');
+  // };
 
   let avatar;
   const user = auth.currentUser;
@@ -23,7 +23,7 @@ export default function Avatar({ navigation, avatarPosition }: any) {
 
   return (
     <TouchableOpacity
-      onPress={handleSignOut}
+      // onPress={handleSignOut}
       style={[styles.avatar, avatarPosition]}
     >
       <Text style={styles.avatarText}>{avatar}</Text>
