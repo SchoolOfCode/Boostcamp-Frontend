@@ -5,6 +5,7 @@ export default function OffScreenMediumScreen({ navigation }: any) {
     <TaskScreenTemplate
       route="tasks/offscreen/medium"
       navigation={navigation}
+      svgImage="mediumImageOffScreen"
     />
   );
 }

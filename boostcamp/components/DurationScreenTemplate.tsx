@@ -8,6 +8,7 @@ export default function DurationScreenTemplate({
   navigation,
   taskScreenType,
   cardText,
+  svgImage,
 }: any) {
   const ShortHandler = () => {
     navigation.navigate(`${taskScreenType}_Screen_Short`);
@@ -29,6 +30,7 @@ export default function DurationScreenTemplate({
         cardText={`A short task ${cardText} your screen`}
         borderColor="#EF8D72"
         buttonText="5-10 min."
+        svgImage="shortImage"
       />
       <TaskDurationCard
         onPressHandler={MediumHandler}
@@ -36,6 +38,7 @@ export default function DurationScreenTemplate({
         cardText={`A medium task ${cardText} your screen`}
         borderColor="#5C60F4"
         buttonText="30-60 min."
+        svgImage="mediumImage"
       />
       <TaskDurationCard
         onPressHandler={LongHandler}
@@ -43,6 +46,7 @@ export default function DurationScreenTemplate({
         cardText={`A long task ${cardText} your screen`}
         borderColor="#EC6364"
         buttonText="Abstract"
+        svgImage="longImage"
       />
     </SafeAreaView>
   );

@@ -1,5 +1,8 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import ShortTaskSVG from '../SVG_Illustrations/Run - Health.svg';
+import MediumTaskSVG from '../SVG_Illustrations/Friends.svg';
+import LongTaskSVG from '../SVG_Illustrations/Location.svg';
 
 export default function TaskDurationCard({
   onPressHandler,
@@ -7,6 +10,7 @@ export default function TaskDurationCard({
   cardText,
   borderColor,
   buttonText,
+  svgImage,
 }: any) {
   const Clock = (props: any) => (
     <Svg
@@ -24,6 +28,15 @@ export default function TaskDurationCard({
 
   return (
     <View style={styles.card}>
+      <>
+        {svgImage === 'shortImage' ? (
+          <ShortTaskSVG style={styles.svgImage} width={140} height={140} />
+        ) : svgImage === 'mediumImage' ? (
+          <MediumTaskSVG style={styles.svgImage} width={140} height={140} />
+        ) : (
+          <LongTaskSVG style={styles.svgImage} width={140} height={140} />
+        )}
+      </>
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <View style={styles.cardTextContainer}>
         <Text style={styles.cardText}>{cardText}</Text>
@@ -54,6 +67,12 @@ const styles = StyleSheet.create({
     fontSize: 23,
     top: 40,
     left: 180,
+  },
+  svgImage: {
+    position: 'absolute',
+    fontSize: 20,
+    top: 20,
+    left: 15,
   },
   cardTextContainer: {
     width: 158,

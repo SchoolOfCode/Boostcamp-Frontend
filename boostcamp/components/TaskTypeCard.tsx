@@ -1,13 +1,25 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native';
+import OnScreenSVG from '../SVG_Illustrations/Onscreen.svg';
+import OffScreenSVG from '../SVG_Illustrations/Writing.svg';
 
 export default function TaskTypeCard({
   onPressHandler,
   cardTitle,
   cardText,
   borderColor,
+  svgImage,
 }: any) {
   return (
     <View style={styles.card}>
+      <>
+        {svgImage === 'offscreen' ? (
+          <OffScreenSVG style={styles.svgImage} width={170} height={170} />
+        ) : (
+          <OnScreenSVG style={styles.svgImage} width={170} height={170} />
+        )}
+      </>
+      {/* <OnScreenSVG style={styles.svgImage} width={170} height={170}/>
+      <OffScreenSVG style={styles.svgImagetwo} width={170} height={170}/> */}
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <Text style={styles.cardText}>{cardText}</Text>
       <Pressable
@@ -28,6 +40,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: 'black',
     marginBottom: 25,
+  },
+  svgImage: {
+    position: 'absolute',
+    fontSize: 20,
+    top: 0,
+    left: 120,
   },
   cardTitle: {
     fontFamily: 'Avenir',
