@@ -1,15 +1,10 @@
 //import {useState} to use state for the star rating component and other props from react native
-import { useState } from "react";
-import { TouchableOpacity, View, Image, StyleSheet } from "react-native";
-import StarEmptySVG from "../SVG_Illustrations/StarEmpty.svg";
-import StarFilledSVG from "../SVG_Illustrations/StarFilled.svg";
+import { useState } from 'react';
+import { TouchableOpacity, View, Image, StyleSheet } from 'react-native';
+import StarEmptySVG from '../SVG_Illustrations/StarEmpty.svg';
+import StarFilledSVG from '../SVG_Illustrations/StarFilled.svg';
 
 //declare const for images of empty star and filled star
-
-// const starImgFilled =
-//   "https://www.pngfind.com/pngs/m/657-6575006_star-with-rounded-edges-png-star-rounded-corners.png";
-// const starImgCorner =
-//   "https://www.pinclipart.com/picdir/big/394-3949390_computer-icons-clip-art-star-png-icon-transparent.png";
 
 // declare rating bar, which returns star image, wrapped in TouchableOpacity
 
@@ -38,14 +33,14 @@ const StarRating = () => {
 
 const styles = StyleSheet.create({
   starRatingStyle: {
-    justifyContent: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    flexDirection: 'row',
     marginTop: 30,
   },
   starImageStyle: {
     width: 40,
     height: 40,
-    resizeMode: "cover",
+    resizeMode: 'cover',
   },
 });
 
