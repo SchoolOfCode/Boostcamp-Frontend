@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import { StyleSheet, Platform, StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskDurationCard from './TaskDurationCard';
 import Logo from './Logo';
@@ -20,9 +20,14 @@ export default function DurationScreenTemplate({
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
-      <Avatar avatarPosition={styles.avatarPosition} />
+    <SafeAreaView style={[styles.container, styles.AndroidSafeArea]}>
+      <View style={styles.navBar}>
+        <View style={styles.logo}>
+          <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+        </View>
+        <Avatar avatarPosition={styles.avatarPosition} />
+      </View>
+      <View style={styles.cards}>
       <TaskDurationCard
         onPressHandler={ShortHandler}
         cardTitle="Short Task"
@@ -47,26 +52,42 @@ export default function DurationScreenTemplate({
         buttonText="Abstract"
         svgImage="longImage"
       />
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  AndroidSafeArea: {
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
+  container: {
     height: '100%',
     width: '100%',
-    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
   },
+  navBar: {
+    height: Platform.OS === "ios" ? "12%" : "8%",
+    width: "100%",
+    justifyContent: 'center',
+  },
+  logo: {
+    paddingTop: Platform.OS === 'ios' ? "15%" : 0,
+  },
   boostcamp: {
-    bottom: 25,
-    right: 20,
+   left: "13%",
   },
   star: {
-    bottom: 28,
-    right: 155,
+    left: "5%",
   },
-  avatarPosition: { top: 62, right: 30 },
+  avatarPosition: { 
+    alignSelf: "flex-end",
+    right: "5%",
+  },
+  cards: {
+    height: "75%",
+    top: "2%",
+    justifyContent: 'space-between',
+  }
 });

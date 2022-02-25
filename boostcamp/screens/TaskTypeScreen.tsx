@@ -1,4 +1,4 @@
-import { StyleSheet, Platform, StatusBar } from 'react-native';
+import { StyleSheet, Platform, StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskTypeCard from '../components/TaskTypeCard';
 import Logo from '../components/Logo';
@@ -13,9 +13,14 @@ export default function TaskTypeScreen({ navigation }: any) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
-      <Avatar avatarPosition={styles.avatarPosition} />
+    <SafeAreaView style={[styles.container, styles.AndroidSafeArea]}>
+      <View style={styles.navBar}>
+        <View style={styles.logo}>
+          <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+        </View>
+        <Avatar avatarPosition={styles.avatarPosition} />
+      </View>
+      <View style={styles.cards}>
       <TaskTypeCard
         onPressHandler={onScreenHandler}
         cardTitle="On Screen"
@@ -30,6 +35,7 @@ export default function TaskTypeScreen({ navigation }: any) {
         borderColor="#64FCD9"
         svgImage= "offscreen"
       />
+      </View>
     </SafeAreaView>
   );
 }
@@ -41,18 +47,30 @@ const styles = StyleSheet.create({
   container: {
     height: '100%',
     width: '100%',
-    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+  },
+  navBar: {
+    height: Platform.OS === "ios" ? "12%" : "8%",
+    width: "100%",
     justifyContent: 'center',
   },
+  logo: {
+    paddingTop: Platform.OS === 'ios' ? "15%" : 0,
+  },
   boostcamp: {
-    bottom: 115,
-    right: 20,
+   left: "13%",
   },
   star: {
-    bottom: 118,
-    right: 155,
+    left: "5%",
   },
-  avatarPosition: { top: 80, right: 30 },
+  avatarPosition: { 
+    alignSelf: "flex-end",
+    right: "5%",
+  },
+  cards: {
+    height: "75%",
+    top: "2%",
+    justifyContent: 'space-between',
+  }
 });

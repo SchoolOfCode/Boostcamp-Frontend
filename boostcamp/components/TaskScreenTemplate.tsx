@@ -1,4 +1,4 @@
-import { StyleSheet, Pressable, Text, Platform, StatusBar } from 'react-native';
+import { StyleSheet, Pressable, Text, Platform, StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
@@ -36,45 +36,67 @@ export default function TaskScreenTemplate({
   useFetch();
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
-      <Avatar avatarPosition={styles.avatarPosition} />
-      <TaskCard
-        cardTitle={task.taskInstructions}
-        cardText={task.taskBenefits}
-        svgImage={svgImage}
-      />
-      <Pressable onPress={onPressHandler} style={styles.button}>
-        <Text style={styles.buttonText}>Complete Task</Text>
-      </Pressable>
+    <SafeAreaView style={[styles.container, styles.AndroidSafeArea]}>
+      <View style={styles.navBar}>
+        <View style={styles.logo}>
+          <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
+        </View>
+        <Avatar avatarPosition={styles.avatarPosition} />
+      </View>
+      <View style={styles.card}>
+          <TaskCard
+          cardTitle={task.taskInstructions}
+          cardText={task.taskBenefits}
+          svgImage={svgImage}
+          />
+          <View>
+            <Pressable onPress={onPressHandler} style={styles.button}>
+              <Text style={styles.buttonText}>Complete Task</Text>
+            </Pressable>
+          </View>
+        </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  AndroidSafeArea: {
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
+  container: {
     height: '100%',
     width: '100%',
-    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
   },
+  navBar: {
+    height: Platform.OS === "ios" ? "12%" : "8%",
+    width: "100%",
+    justifyContent: 'center',
+  },
+  logo: {
+    paddingTop: Platform.OS === 'ios' ? "15%" : 0,
+  },
   boostcamp: {
-    bottom: 25,
-    right: 20,
+   left: "13%",
   },
   star: {
-    bottom: 28,
-    right: 155,
+    left: "5%",
+  },
+  avatarPosition: { 
+    alignSelf: "flex-end",
+    right: "5%",
+  },
+  card: {
+    height: "75%",
+    top: "2%",
+    justifyContent: 'space-between',
   },
   button: {
     backgroundColor: 'black',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 43,
-    width: 175,
+    alignSelf: "center",
+    width: "60%",
+    padding: "2.5%",
     borderWidth: 1.5,
     borderRadius: 30,
   },
@@ -82,9 +104,8 @@ const styles = StyleSheet.create({
     color: 'white',
     display: 'flex',
     textAlign: 'center',
-    fontFamily: 'Avenir',
+    fontFamily: "Avenir",
     fontWeight: 'bold',
     fontSize: 22,
   },
-  avatarPosition: { top: 64, right: 30 },
 });
