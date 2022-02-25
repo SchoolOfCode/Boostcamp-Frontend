@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "boostcamp",
-    "slug": "boostcamp",
+    "name": "BOOSTCAMP",
+    "slug": "Boostcamp",
     "privacy": "public",
     "description": "An app that offers a user a set of random tasks of varying type and duration to complete each day.",
     "version": "1.0.0",

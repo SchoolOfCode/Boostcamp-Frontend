@@ -1,4 +1,6 @@
 import { View, Text, Pressable, Platform, StyleSheet } from 'react-native';
+import StarRating from './StarRating';
+
 import OnscreenShortSVG from '../SVG_Illustrations/onScreenImages/OnscreenShort.svg';
 import OnscreenMediumSVG from '../SVG_Illustrations/onScreenImages/OnscreenMedium.svg';
 import OnscreenLongSVG from '../SVG_Illustrations/onScreenImages/OnscreenLong.svg';
@@ -6,6 +8,7 @@ import OnscreenLongSVG from '../SVG_Illustrations/onScreenImages/OnscreenLong.sv
 import OffscreenShortSVG from '../SVG_Illustrations/offScreenImages/WritingShort.svg';
 import OffscreenMediumSVG from '../SVG_Illustrations/offScreenImages/WritingMedium.svg';
 import OffscreenLongSVG from '../SVG_Illustrations/offScreenImages/WritingLong.svg';
+
 export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
   return (
     <View style={styles.card}>
@@ -30,6 +33,8 @@ export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
         )}
       </>
       <Text style={styles.cardText}>{cardText}</Text>
+      {/* <Text>Please rate us</Text> */}
+      <StarRating />
     </View>
   );
 }
