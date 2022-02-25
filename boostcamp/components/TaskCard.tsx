@@ -1,5 +1,6 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable, Platform, StyleSheet } from 'react-native';
 import StarRating from './StarRating';
+
 import OnscreenShortSVG from '../SVG_Illustrations/onScreenImages/OnscreenShort.svg';
 import OnscreenMediumSVG from '../SVG_Illustrations/onScreenImages/OnscreenMedium.svg';
 import OnscreenLongSVG from '../SVG_Illustrations/onScreenImages/OnscreenLong.svg';
@@ -14,7 +15,7 @@ export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <>
         {svgImage === 'shortImageOnScreen' ? (
-          <OnscreenShortSVG style={styles.svgImage} width={240} height={240} />
+          <OnscreenShortSVG style={styles.svgImage} width={200} height={200} />
         ) : svgImage === 'mediumImageOnScreen' ? (
           <OnscreenMediumSVG style={styles.svgImage} width={240} height={240} />
         ) : svgImage === 'longImageOnScreen' ? (
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   card: {
     // Temporary height until tasks have been length checked.
     // height: 450,
-    height: 650,
+    height: "100%",
     width: 370,
     borderWidth: 1.5,
     borderRadius: 10,
@@ -50,17 +51,17 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   svgImage: {
-    fontSize: 20,
-    top: 20,
-    left: 60,
+    top: "9%",
+    alignSelf: "center",
   },
   cardTitle: {
-    alignSelf: 'center',
-    fontFamily: 'Avenir',
+    alignSelf: "center",
+    textAlign: 'center',
+    fontFamily: "Avenir",
     fontWeight: 'bold',
     fontSize: 20,
-    top: 15,
-    width: 270,
+    top: "5%",
+    width: '90%',
   },
   cardText: {
     textAlign: 'center',
@@ -68,11 +69,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    fontFamily: 'Avenir',
+    fontFamily: "Avenir",
     height: 150,
     fontWeight: '100',
     fontSize: 18,
-    top: 40,
+    top: "13%",
     width: 278,
   },
 });
