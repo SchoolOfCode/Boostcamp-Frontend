@@ -1,25 +1,27 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
-import OnscreenShortSVG from '../SVG_Illustrations/onScreenImages/OnscreenShort.svg';
-import OnscreenMediumSVG from '../SVG_Illustrations/onScreenImages/OnscreenMedium.svg';
-import OnscreenLongSVG from '../SVG_Illustrations/onScreenImages/OnscreenLong.svg';
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import StarRating from "./StarRating";
+import OnscreenShortSVG from "../SVG_Illustrations/onScreenImages/OnscreenShort.svg";
+import OnscreenMediumSVG from "../SVG_Illustrations/onScreenImages/OnscreenMedium.svg";
+import OnscreenLongSVG from "../SVG_Illustrations/onScreenImages/OnscreenLong.svg";
 
-import OffscreenShortSVG from '../SVG_Illustrations/offScreenImages/WritingShort.svg';
-import OffscreenMediumSVG from '../SVG_Illustrations/offScreenImages/WritingMedium.svg';
-import OffscreenLongSVG from '../SVG_Illustrations/offScreenImages/WritingLong.svg';
+import OffscreenShortSVG from "../SVG_Illustrations/offScreenImages/WritingShort.svg";
+import OffscreenMediumSVG from "../SVG_Illustrations/offScreenImages/WritingMedium.svg";
+import OffscreenLongSVG from "../SVG_Illustrations/offScreenImages/WritingLong.svg";
+
 export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
   return (
     <View style={styles.card}>
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <>
-        {svgImage === 'shortImageOnScreen' ? (
+        {svgImage === "shortImageOnScreen" ? (
           <OnscreenShortSVG style={styles.svgImage} width={240} height={240} />
-        ) : svgImage === 'mediumImageOnScreen' ? (
+        ) : svgImage === "mediumImageOnScreen" ? (
           <OnscreenMediumSVG style={styles.svgImage} width={240} height={240} />
-        ) : svgImage === 'longImageOnScreen' ? (
+        ) : svgImage === "longImageOnScreen" ? (
           <OnscreenLongSVG style={styles.svgImage} width={240} height={240} />
-        ) : svgImage === 'shortImageOffScreen' ? (
+        ) : svgImage === "shortImageOffScreen" ? (
           <OffscreenShortSVG style={styles.svgImage} width={240} height={240} />
-        ) : svgImage === 'mediumImageOffScreen' ? (
+        ) : svgImage === "mediumImageOffScreen" ? (
           <OffscreenMediumSVG
             style={styles.svgImage}
             width={240}
@@ -30,6 +32,8 @@ export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
         )}
       </>
       <Text style={styles.cardText}>{cardText}</Text>
+      <Text>Please rate us</Text>
+      <StarRating />
     </View>
   );
 }
@@ -42,7 +46,7 @@ const styles = StyleSheet.create({
     width: 370,
     borderWidth: 1.5,
     borderRadius: 10,
-    borderColor: 'black',
+    borderColor: "black",
     marginBottom: 25,
   },
   svgImage: {
@@ -51,22 +55,22 @@ const styles = StyleSheet.create({
     left: 60,
   },
   cardTitle: {
-    alignSelf: 'center',
-    fontFamily: 'Avenir',
-    fontWeight: 'bold',
+    alignSelf: "center",
+    fontFamily: "Avenir",
+    fontWeight: "bold",
     fontSize: 20,
     top: 15,
     width: 270,
   },
   cardText: {
-    textAlign: 'center',
-    alignSelf: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    fontFamily: 'Avenir',
+    textAlign: "center",
+    alignSelf: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    fontFamily: "Avenir",
     height: 150,
-    fontWeight: '100',
+    fontWeight: "100",
     fontSize: 18,
     top: 40,
     width: 278,
