@@ -1,8 +1,8 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
-import ShortTaskSVG from '../SVG_Illustrations/Run - Health.svg';
-import MediumTaskSVG from '../SVG_Illustrations/Friends.svg';
-import LongTaskSVG from '../SVG_Illustrations/Location.svg';
+import { View, Text, Pressable, StyleSheet } from "react-native";
+import Svg, { Path } from "react-native-svg";
+import ShortTaskSVG from "../SVG_Illustrations/Run - Health.svg";
+import MediumTaskSVG from "../SVG_Illustrations/Friends.svg";
+import LongTaskSVG from "../SVG_Illustrations/Location.svg";
 
 export default function TaskDurationCard({
   onPressHandler,
@@ -29,9 +29,9 @@ export default function TaskDurationCard({
   return (
     <View style={styles.card}>
       <>
-        {svgImage === 'shortImage' ? (
+        {svgImage === "shortImage" ? (
           <ShortTaskSVG style={styles.svgImage} width={140} height={140} />
-        ) : svgImage === 'mediumImage' ? (
+        ) : svgImage === "mediumImage" ? (
           <MediumTaskSVG style={styles.svgImage} width={140} height={140} />
         ) : (
           <LongTaskSVG style={styles.svgImage} width={140} height={140} />
@@ -58,18 +58,18 @@ const styles = StyleSheet.create({
     width: 380,
     borderWidth: 1.5,
     borderRadius: 10,
-    borderColor: 'black',
+    borderColor: "black",
     marginBottom: 25,
   },
   cardTitle: {
-    fontFamily: 'Avenir',
-    fontWeight: 'bold',
+    fontFamily: "Avenir",
+    fontWeight: "bold",
     fontSize: 23,
     top: 40,
     left: 180,
   },
   svgImage: {
-    position: 'absolute',
+    position: "absolute",
     fontSize: 20,
     top: 20,
     left: 15,
@@ -79,19 +79,19 @@ const styles = StyleSheet.create({
     height: 50,
     top: 45,
     left: 180,
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
   cardText: {
-    fontFamily: 'Avenir',
-    fontWeight: '100',
+    fontFamily: "Avenir",
+    fontWeight: "100",
     fontSize: 15,
   },
   button: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     left: 180,
     top: 50,
     height: 43,
@@ -104,10 +104,10 @@ const styles = StyleSheet.create({
     top: 15,
   },
   buttonText: {
-    display: 'flex',
-    textAlign: 'center',
-    fontFamily: 'Avenir',
-    fontWeight: 'bold',
+    display: "flex",
+    textAlign: "center",
+    fontFamily: "Avenir",
+    fontWeight: "bold",
     fontSize: 22,
     left: 18,
     bottom: 12,
