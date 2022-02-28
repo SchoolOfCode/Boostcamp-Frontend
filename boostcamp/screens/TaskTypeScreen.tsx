@@ -43,8 +43,8 @@ export default function TaskTypeScreen({ navigation }: any) {
           svgImage="offscreen"
         />
       </View>
-      <Pressable style={styles.stepButton}>
-        <Text style={styles.stepButtonText}>Step 1</Text>
+      <Pressable style={styles.step}>
+        <Text style={styles.stepText}>Step 1</Text>
       </Pressable>
     </SafeAreaView>
   );
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     top: '2%',
     justifyContent: 'space-between',
   },
-  stepButton: {
+  step: {
     position: 'absolute',
     backgroundColor: 'white',
     justifyContent: 'center',
@@ -91,10 +91,10 @@ const styles = StyleSheet.create({
     height: 50,
     width: 110,
     borderWidth: 1.5,
-    borderRadius: 30,
+    borderRadius: 10,
     bottom: 54,
   },
-  stepButtonText: {
+  stepText: {
     color: 'black',
     display: 'flex',
     textAlign: 'center',

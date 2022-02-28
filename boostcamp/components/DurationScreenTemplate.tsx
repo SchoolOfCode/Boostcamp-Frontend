@@ -75,8 +75,8 @@ export default function DurationScreenTemplate({
         backPosition={styles.backPosition}
         homePosition={styles.homePosition}
       />
-      <Pressable style={styles.stepButton}>
-        <Text style={styles.stepButtonText}>Step 2</Text>
+      <Pressable style={styles.step}>
+        <Text style={styles.stepText}>Step 2</Text>
       </Pressable>
     </SafeAreaView>
   );
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     bottom: -90,
     right: -120,
   },
-  stepButton: {
+  step: {
     position: 'absolute',
     backgroundColor: 'white',
     justifyContent: 'center',
@@ -131,10 +131,10 @@ const styles = StyleSheet.create({
     height: 50,
     width: 110,
     borderWidth: 1.5,
-    borderRadius: 30,
+    borderRadius: 10,
     bottom: 54,
   },
-  stepButtonText: {
+  stepText: {
     color: 'black',
     display: 'flex',
     textAlign: 'center',
