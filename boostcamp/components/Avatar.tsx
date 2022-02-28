@@ -42,20 +42,26 @@ export default function Avatar({ avatarPosition, navigation }: any) {
       style={[styles.avatar, avatarPosition]}
     >
       <Text style={styles.avatarText}>{avatar}</Text>
-      <Modal transparent visible={modal} onRequestClose={handleModal}>
+      <Modal
+        transparent
+        visible={modal}
+        onRequestClose={handleModal}
+        animationType="slide"
+        hardwareAccelerated
+      >
         <View style={styles.modal}>
           <Pressable style={styles.modalAvatar}>
             <Text style={styles.modalAvatarText}>{avatar}</Text>
           </Pressable>
-          <Pressable
+          <TouchableOpacity
             onPress={handleSignOut}
             style={[styles.button, styles.buttonOutline]}
           >
             <Text style={styles.buttonOutlineText}>Sign Out</Text>
-          </Pressable>
-          <Pressable onPress={handleModal} style={styles.button}>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleModal} style={styles.button}>
             <Text style={styles.buttonText}>Back</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </Modal>
     </TouchableOpacity>
