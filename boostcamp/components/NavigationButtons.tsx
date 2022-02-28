@@ -6,12 +6,8 @@ export default function NavigationButtons({
   backPosition,
   homePosition,
   backHandler,
-  navigation,
+  homeHandler,
 }: any) {
-  const homeHandler = () => {
-    navigation.replace('Task_Type_Screen');
-  };
-
   return (
     <View>
       <Pressable onPress={backHandler} style={[styles.button, backPosition]}>

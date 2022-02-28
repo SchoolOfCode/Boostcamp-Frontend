@@ -28,6 +28,10 @@ export default function TaskScreenTemplate({
     navigation.goBack();
   };
 
+  const homeHandler = () => {
+    navigation.replace('Task_Type_Screen');
+  };
+
   // Eventually will differ in functionality from the homeHandler
   const completeHandler = () => {
     navigation.replace('Task_Type_Screen');
@@ -68,6 +72,7 @@ export default function TaskScreenTemplate({
           </Pressable>
           <NavigationButtons
             backHandler={backHandler}
+            homeHandler={homeHandler}
             backPosition={styles.backPosition}
             homePosition={styles.homePosition}
           />
