@@ -25,7 +25,10 @@ export default function TaskTypeScreen({ navigation }: any) {
         <View style={styles.logo}>
           <Logo boostcampStyle={styles.boostcamp} starStyle={styles.star} />
         </View>
-        <Avatar avatarPosition={styles.avatarPosition} />
+        <Avatar
+          avatarPosition={styles.avatarPosition}
+          navigation={navigation}
+        />
       </View>
       <View style={styles.cards}>
         <TaskTypeCard
