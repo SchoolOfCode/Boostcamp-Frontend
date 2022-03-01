@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 import TaskTypeScreen from './screens/TaskTypeScreen';
 import OnScreen from './screens/OnScreen';
 import OnScreenShortScreen from './screens/OnScreenShortScreen';
@@ -20,6 +21,11 @@ export default function App() {
         <Stack.Screen
           name="Login_Screen"
           component={LoginScreen}
+          options={{ header: () => null }}
+        />
+        <Stack.Screen
+          name="Register_Screen"
+          component={RegisterScreen}
           options={{ header: () => null }}
         />
         <Stack.Screen
