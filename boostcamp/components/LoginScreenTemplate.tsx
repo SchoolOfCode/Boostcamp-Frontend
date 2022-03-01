@@ -85,11 +85,8 @@ const LoginScreenTemplate = ({ navigation, screen }: any) => {
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity
-            onPress={handleSignUp}
-            style={[styles.button, styles.buttonOutline]}
-          >
-            <Text style={styles.buttonOutlineText}>Sign Up</Text>
+          <TouchableOpacity onPress={handleSignUp} style={styles.button}>
+            <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
         )}
         {screen === 'Login_Screen' && (
