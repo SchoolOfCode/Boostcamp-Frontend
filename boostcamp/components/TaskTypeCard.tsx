@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Platform, StyleSheet } from 'react-native';
+import { View, Text, Pressable, TouchableOpacity, StyleSheet } from 'react-native';
 import OnScreenSVG from '../SVG_Illustrations/Onscreen.svg';
 import OffScreenSVG from '../SVG_Illustrations/Writing.svg';
 
@@ -20,12 +20,12 @@ export default function TaskTypeCard({
       </>
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <Text style={styles.cardText}>{cardText}</Text>
-      <Pressable
+      <TouchableOpacity
         onPress={onPressHandler}
         style={[styles.button, { borderColor: borderColor }]}
       >
         <Text style={styles.buttonText}>Choose Me</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }

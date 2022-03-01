@@ -1,4 +1,4 @@
-import { StyleSheet, Pressable, Text, Platform, StatusBar, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, Platform, StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import TaskCard from './TaskCard';
 import Logo from './Logo';
@@ -50,9 +50,9 @@ export default function TaskScreenTemplate({
           svgImage={svgImage}
           />
           <View>
-            <Pressable onPress={onPressHandler} style={styles.button}>
+            <TouchableOpacity onPress={onPressHandler} style={styles.button}>
               <Text style={styles.buttonText}>Complete Task</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         </View>
     </SafeAreaView>

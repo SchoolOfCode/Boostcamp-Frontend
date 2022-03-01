@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Platform, StyleSheet, YellowBox } from "react-native";
+import { View, Text, Pressable, TouchableOpacity, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Path } from "react-native-svg";
 import ShortTaskSVG from "../SVG_Illustrations/Run - Health.svg";
@@ -13,6 +13,7 @@ export default function TaskDurationCard({
   buttonText,
   svgImage,
 }: any) {
+
   const Clock = (props: any) => (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +29,7 @@ export default function TaskDurationCard({
   );
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPressHandler}>
       <>
         {svgImage === "shortImage" ? (
           <ShortTaskSVG style={styles.svgImage} width={"70%"} height={"70%"} />
@@ -43,15 +44,14 @@ export default function TaskDurationCard({
         <View style={styles.cardTextContainer}>
           <Text style={styles.cardText}>{cardText}</Text>
         </View>
-        <Pressable
-          onPress={onPressHandler}
+        <View
           style={[styles.button, { borderColor: borderColor }]}
         >
           <Clock style={styles.clock} />
           <Text style={styles.buttonText}>{buttonText}</Text>
-        </Pressable>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
