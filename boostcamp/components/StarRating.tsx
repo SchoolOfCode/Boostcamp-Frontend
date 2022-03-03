@@ -1,46 +1,61 @@
-//import {useState} to use state for the star rating component and other props from react native
 import { useState } from 'react';
-import { TouchableOpacity, View, Image, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, Text } from 'react-native';
 import StarEmptySVG from '../SVG_Illustrations/StarEmpty.svg';
 import StarFilledSVG from '../SVG_Illustrations/StarFilled.svg';
 
-//declare const for images of empty star and filled star
-
-// declare rating bar, which returns star image, wrapped in TouchableOpacity
-
 const StarRating = () => {
-  //add initial default state for ratings and max rating
-  const [defaultRating, setdefaultRating] = useState(0);
-  const [maxRating, setmaxRating] = useState([1, 2, 3, 4, 5]);
-  //style for starRatingStyle = style for a line of 5 stars
-  //
+  const [defaultRating, setDefaultRating] = useState(0);
+  const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
   return (
-    <View style={styles.starRatingStyle}>
-      {maxRating.map((item) => {
-        return (
-          <TouchableOpacity
-            activeOpacity={0.7}
-            key={item}
-            onPress={() => setdefaultRating(item)} //by this line we're changing our defualt rating and below it will check and parse value for item
-          >
-            <>{item <= defaultRating ? <StarFilledSVG /> : <StarEmptySVG />}</>
-          </TouchableOpacity>
-        );
-      })}
+    <View style={styles.card}>
+      <Text style={styles.starText}>
+        What did you think of your task for today?
+      </Text>
+      <View style={styles.starContainer}>
+        {maxRating.map((item) => {
+          return (
+            <TouchableOpacity
+              activeOpacity={0.7}
+              key={item}
+              onPress={() => setDefaultRating(item)}
+              style={styles.stars}
+            >
+              <>
+                {item <= defaultRating ? <StarFilledSVG /> : <StarEmptySVG />}
+              </>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  starRatingStyle: {
+  card: {
+    marginTop: '-13%',
+    height: '10%',
+    width: 370,
+    borderWidth: 1.5,
+    borderRadius: 10,
+    borderColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  starContainer: {
+    alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginTop: 30,
   },
-  starImageStyle: {
-    width: 40,
-    height: 40,
-    resizeMode: 'cover',
+  starText: {
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    fontWeight: '100',
+    fontSize: 13,
+    width: 278,
+  },
+  stars: {
+    margin: '1%',
   },
 });
 

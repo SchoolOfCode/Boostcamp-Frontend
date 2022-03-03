@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
 import Avatar from './Avatar';
 import NavigationButtons from './NavigationButtons';
+import StarRating from './StarRating';
 
 export default function TaskScreenTemplate({
   navigation,
@@ -69,17 +70,18 @@ export default function TaskScreenTemplate({
           cardText={task.taskBenefits}
           svgImage={svgImage}
         />
-        <View>
-          <Pressable onPress={completeHandler} style={styles.completeButton}>
-            <Text style={styles.completeButtonText}>Complete Task</Text>
-          </Pressable>
-          <NavigationButtons
-            backHandler={backHandler}
-            homeHandler={homeHandler}
-            backPosition={styles.backPosition}
-            homePosition={styles.homePosition}
-          />
-        </View>
+      </View>
+      <StarRating />
+      <View style={styles.buttonsContainer}>
+        <Pressable onPress={completeHandler} style={styles.completeButton}>
+          <Text style={styles.completeButtonText}>Complete Task</Text>
+        </Pressable>
+        <NavigationButtons
+          backHandler={backHandler}
+          homeHandler={homeHandler}
+          backPosition={styles.backPosition}
+          homePosition={styles.homePosition}
+        />
       </View>
     </SafeAreaView>
   );
@@ -116,7 +118,10 @@ const styles = StyleSheet.create({
   card: {
     height: '75%',
     top: '2%',
-    justifyContent: 'space-between',
+  },
+  buttonsContainer: {
+    // height: '10%',
+    width: '85%',
   },
   completeButton: {
     backgroundColor: 'black',
@@ -125,6 +130,7 @@ const styles = StyleSheet.create({
     padding: '2.5%',
     borderWidth: 1.5,
     borderRadius: 30,
+    bottom: -20,
   },
   completeButtonText: {
     color: 'white',
@@ -135,10 +141,10 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   backPosition: {
-    bottom: 0,
+    bottom: -20,
   },
   homePosition: {
-    bottom: 0,
+    bottom: -20,
     right: 0,
   },
 });
