@@ -13,44 +13,77 @@
 ## Component Tree
 
 - App
+  - LoginScreen
+    - LoginScreenTemplate
+  - RegisterScreen
+    - LoginScreenTemplate
   - TaskTypeScreen
     - Logo
       - Star
-        - TaskTypeCard (OnScreen)
-        - TaskTypeCard (OffScreen)
+    - Avatar
+    - TaskTypeCard (OnScreen)
+    - TaskTypeCard (OffScreen)
   - OnScreen
-    - Logo
-      - Star
-    - TaskDurationCard (Onscreen_Short)
-    - TaskDurationCard (Onscreen_Medium)
-    - TaskDurationCard (Onscreen_Long)
+    - DurationScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskDurationCard (Onscreen_Short)
+      - TaskDurationCard (Onscreen_Medium)
+      - TaskDurationCard (Onscreen_Long)
   - OnScreenShortScreen
-    - Logo
-      - Star
-    - TaskCard
+    - TaskScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskCard
+      - StarRating
+      - NavigationButtons
   - OnScreenMediumScreen
-    - Logo
-      - Star
-    - TaskCard
+    - TaskScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskCard
+      - StarRating
+      - NavigationButtons
   - OnScreenLongScreen
-    - Logo
-      - Star
-    - TaskCard
+    - TaskScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskCard
+      - StarRating
+      - NavigationButtons
   - OffScreen
-    - Logo
-      - Star
-    - TaskDurationCard (Offscreen_Short)
-    - TaskDurationCard (Offscreen_Medium)
-    - TaskDurationCard (Offscreen_Long)
+    - DurationScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskDurationCard (Offscreen_Short)
+      - TaskDurationCard (Offscreen_Medium)
+      - TaskDurationCard (Offscreen_Long)
   - OffScreenShortScreen
-    - Logo
-      - Star
-    - TaskCard
+    - TaskScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskCard
+      - StarRating
+      - NavigationButtons
   - OffScreenMediumScreen
-    - Logo
-      - Star
-    - TaskCard
+    - TaskScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskCard
+      - StarRating
+      - NavigationButtons
   - OffScreenLongScreen
-    - Logo
-      - Star
-    - TaskCard
+    - TaskScreenTemplate
+      - Logo
+        - Star
+      - Avatar
+      - TaskCard
+      - StarRating
+      - NavigationButtons
