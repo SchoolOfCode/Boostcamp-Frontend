@@ -1,9 +1,9 @@
 import { View, Text, Pressable, TouchableOpacity, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Svg, { Path } from "react-native-svg";
-import ShortTaskSVG from "../SVG_Illustrations/Run - Health.svg";
-import MediumTaskSVG from "../SVG_Illustrations/Friends.svg";
-import LongTaskSVG from "../SVG_Illustrations/Location.svg";
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Svg, { Path } from 'react-native-svg';
+import ShortTaskSVG from '../SVG_Illustrations/Run - Health.svg';
+import MediumTaskSVG from '../SVG_Illustrations/Friends.svg';
+import LongTaskSVG from '../SVG_Illustrations/Location.svg';
 
 export default function TaskDurationCard({
   onPressHandler,
@@ -31,12 +31,12 @@ export default function TaskDurationCard({
   return (
     <TouchableOpacity style={styles.card} onPress={onPressHandler}>
       <>
-        {svgImage === "shortImage" ? (
-          <ShortTaskSVG style={styles.svgImage} width={"70%"} height={"70%"} />
-        ) : svgImage === "mediumImage" ? (
-          <MediumTaskSVG style={styles.svgImage} width={"70%"} height={"70%"} />
+        {svgImage === 'shortImage' ? (
+          <ShortTaskSVG style={styles.svgImage} width={'70%'} height={'70%'} />
+        ) : svgImage === 'mediumImage' ? (
+          <MediumTaskSVG style={styles.svgImage} width={'70%'} height={'70%'} />
         ) : (
-          <LongTaskSVG style={styles.svgImage} width={"70%"} height={"70%"} />
+          <LongTaskSVG style={styles.svgImage} width={'70%'} height={'70%'} />
         )}
       </>
       <View style={styles.infoContainer}>
@@ -57,60 +57,60 @@ export default function TaskDurationCard({
 
 const styles = StyleSheet.create({
   card: {
-    height: "30%",
-    width: 380,
+    height: '30%',
+    width: '85%',
     borderWidth: 1.5,
     borderRadius: 10,
-    borderColor: "black",
+    borderColor: 'black',
   },
   infoContainer: {
-    width: "48%",
-    right: "5%",
-    height: "100%",
-    alignSelf: "flex-end",
-    justifyContent: "center",
+    width: '48%',
+    right: '5%',
+    height: '100%',
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
   },
   cardTitle: {
-    fontFamily: "Avenir",
-    fontWeight: "bold",
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
     fontSize: 23,
   },
   svgImage: {
-    position: "absolute",
+    position: 'absolute',
     fontSize: 20,
-    top: "15%",
-    right: "43%",
+    top: '15%',
+    right: '43%',
   },
   cardTextContainer: {
-    height: "30%",
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
+    height: '30%',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   cardText: {
-    fontWeight: "100",
-    fontFamily: "Avenir",
+    fontWeight: '100',
+    fontFamily: 'Avenir',
     fontSize: 15,
   },
   button: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "25%",
-    width: "100%",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '25%',
+    width: '100%',
     borderWidth: 1.5,
     borderRadius: 12,
   },
   clock: {
-    right: 65,
-    top: 15,
+    right: '36%',
+    top: '33%',
   },
   buttonText: {
-    display: "flex",
-    fontFamily: "Avenir",
-    fontWeight: "bold",
+    display: 'flex',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
     fontSize: 22,
-    left: 18,
-    bottom: 14,
+    left: '10%',
+    bottom: '33%',
   },
 });

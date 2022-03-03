@@ -1,16 +1,31 @@
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Modal,
+  View,
+  Pressable,
+} from 'react-native';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase';
 import { getAuth, signOut } from 'firebase/auth';
+import { useState } from 'react';
 
-export default function Avatar({ avatarPosition }: any) {
+export default function Avatar({ avatarPosition, navigation }: any) {
+  const [modal, setModal] = useState(false);
+
+  const handleModal = () => {
+    setModal(!modal);
+  };
+
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // const handleSignOut = () => {
-  //   signOut(auth);
-  //   navigation.replace('Login_Screen');
-  // };
+  const handleSignOut = () => {
+    setModal(!modal);
+    signOut(auth);
+    navigation.navigate('Login_Screen');
+  };
 
   let avatar;
   const user = auth.currentUser;
@@ -23,10 +38,32 @@ export default function Avatar({ avatarPosition }: any) {
 
   return (
     <TouchableOpacity
-      // onPress={handleSignOut}
+      onPress={handleModal}
       style={[styles.avatar, avatarPosition]}
     >
       <Text style={styles.avatarText}>{avatar}</Text>
+      <Modal
+        transparent
+        visible={modal}
+        onRequestClose={handleModal}
+        animationType="slide"
+        hardwareAccelerated
+      >
+        <View style={styles.modal}>
+          <Pressable style={styles.modalAvatar}>
+            <Text style={styles.modalAvatarText}>{avatar}</Text>
+          </Pressable>
+          <TouchableOpacity
+            onPress={handleSignOut}
+            style={[styles.button, styles.buttonOutline]}
+          >
+            <Text style={styles.buttonOutlineText}>Sign Out</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleModal} style={styles.button}>
+            <Text style={styles.buttonText}>Back</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
     </TouchableOpacity>
   );
 }
@@ -49,5 +86,65 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: 'bold',
     fontSize: 23,
+  },
+  modal: {
+    backgroundColor: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+  },
+  modalAvatar: {
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 200,
+    width: 200,
+    borderWidth: 1,
+    borderRadius: 1000,
+    marginBottom: '50%',
+  },
+  modalAvatarText: {
+    color: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    fontSize: 70,
+  },
+  modalText: {
+    color: 'white',
+  },
+  button: {
+    backgroundColor: 'black',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 43,
+    width: 135,
+    borderWidth: 1.5,
+    borderRadius: 30,
+    borderColor: 'white',
+    marginBottom: 20,
+  },
+  buttonOutline: {
+    backgroundColor: 'white',
+  },
+  buttonText: {
+    color: 'white',
+    display: 'flex',
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  buttonOutlineText: {
+    color: 'black',
+    display: 'flex',
+    textAlign: 'center',
+    fontFamily: 'Avenir',
+    fontWeight: 'bold',
+    fontSize: 20,
   },
 });

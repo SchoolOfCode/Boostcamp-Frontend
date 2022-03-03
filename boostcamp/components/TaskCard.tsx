@@ -33,34 +33,29 @@ export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
         )}
       </>
       <Text style={styles.cardText}>{cardText}</Text>
-      {/* <Text>Please rate us</Text> */}
-      <StarRating />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    // Temporary height until tasks have been length checked.
-    // height: 450,
-    height: "100%",
-    width: 370,
+    height: '85%',
+    width: '100%',
     borderWidth: 1.5,
     borderRadius: 10,
     borderColor: 'black',
-    marginBottom: 25,
   },
   svgImage: {
-    top: "9%",
-    alignSelf: "center",
+    top: '5%',
+    alignSelf: 'center',
   },
   cardTitle: {
-    alignSelf: "center",
+    alignSelf: 'center',
     textAlign: 'center',
-    fontFamily: "Avenir",
+    fontFamily: 'Avenir',
     fontWeight: 'bold',
     fontSize: 20,
-    top: "5%",
+    top: '5%',
     width: '90%',
   },
   cardText: {
@@ -69,11 +64,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    fontFamily: "Avenir",
+    fontFamily: 'Avenir',
     height: 150,
     fontWeight: '100',
     fontSize: 18,
-    top: "13%",
+    top: '2%',
     width: 278,
   },
 });
