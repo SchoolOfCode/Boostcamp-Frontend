@@ -117,10 +117,11 @@ const styles = StyleSheet.create({
   },
   card: {
     height: '75%',
+    width: '85%',
+    alignItems: 'center',
     top: '2%',
   },
   buttonsContainer: {
-    // height: '10%',
     width: '85%',
   },
   completeButton: {

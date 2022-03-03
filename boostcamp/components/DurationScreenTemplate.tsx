@@ -114,7 +114,9 @@ const styles = StyleSheet.create({
     right: '5%',
   },
   cards: {
+    alignItems: 'center',
     height: '75%',
+    width: '100%',
     top: '2%',
     justifyContent: 'space-between',
   },

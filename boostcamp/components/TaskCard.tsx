@@ -40,7 +40,7 @@ export default function TaskCard({ cardTitle, cardText, svgImage }: any) {
 const styles = StyleSheet.create({
   card: {
     height: '85%',
-    width: 370,
+    width: '100%',
     borderWidth: 1.5,
     borderRadius: 10,
     borderColor: 'black',
