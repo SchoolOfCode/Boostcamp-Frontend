@@ -1,6 +1,7 @@
 import { View, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Path } from 'react-native-svg';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default function Logo({ boostcampStyle, starStyle }: any) {
   const Star = (props: any) => (
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontFamily: 'Avenir',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: RFValue(16),
+    // fontSize: 20,
   },
 });
