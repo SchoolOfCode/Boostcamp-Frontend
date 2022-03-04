@@ -1,7 +1,13 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
-import OnScreenSVG from "../SVG_Illustrations/Onscreen.svg";
-import OffScreenSVG from "../SVG_Illustrations/Writing.svg";
-
+import {
+  View,
+  Text,
+  Pressable,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import OnScreenSVG from '../SVG_Illustrations/Onscreen.svg';
+import OffScreenSVG from '../SVG_Illustrations/Writing.svg';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default function TaskTypeCard({
   onPressHandler,
@@ -11,64 +17,61 @@ export default function TaskTypeCard({
   svgImage,
 }: any) {
   return (
-
     <View style={styles.card}>
-      <> 
-        {svgImage === "offscreen"
-        ?<OffScreenSVG style = {styles.svgImage} width={170} height={170}/>
-        :<OnScreenSVG style = {styles.svgImage} width={170} height={170}/>
-}
+      <>
+        {svgImage === 'offscreen' ? (
+          <OffScreenSVG style={styles.svgImage} width={'70%'} height={'70%'} />
+        ) : (
+          <OnScreenSVG style={styles.svgImage} width={'70%'} height={'70%'} />
+        )}
       </>
-      {/* <OnScreenSVG style={styles.svgImage} width={170} height={170}/>
-      <OffScreenSVG style={styles.svgImagetwo} width={170} height={170}/> */}
       <Text style={styles.cardTitle}>{cardTitle}</Text>
       <Text style={styles.cardText}>{cardText}</Text>
-      <Pressable
+      <TouchableOpacity
         onPress={onPressHandler}
-        style={{ ...styles.button, borderColor: borderColor }}
+        style={[styles.button, { borderColor: borderColor }]}
       >
         <Text style={styles.buttonText}>Choose Me</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    height: 250,
-    width: 380,
+    height: '48%',
+    width: '85%',
     borderWidth: 1.5,
     borderRadius: 10,
     borderColor: 'black',
-    marginBottom: 25,
+    justifyContent: 'center',
   },
   svgImage: {
-    position: "absolute",
-    fontSize: 20,
-    top: 0,
-    left: 120,
+    position: 'absolute',
+    top: '0%',
+    left: '25%',
   },
   cardTitle: {
     fontFamily: 'Avenir',
     fontWeight: 'bold',
-    fontSize: 20,
-    top: 130,
-    left: 25,
+    fontSize: RFValue(14.4),
+    top: '20%',
+    left: '8%',
   },
   cardText: {
     fontFamily: 'Avenir',
     fontWeight: '100',
-    fontSize: 17,
-    top: 130,
-    left: 25,
+    fontSize: RFValue(12.8),
+    top: '20%',
+    left: '8%',
   },
   button: {
     display: 'flex',
     justifyContent: 'center',
     alignSelf: 'center',
-    top: 140,
-    height: 43,
-    width: 330,
+    top: '25%',
+    height: '20%',
+    width: '85%',
     borderWidth: 1.5,
     borderRadius: 20,
   },
@@ -77,6 +80,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'Avenir',
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: RFValue(19.2),
   },
 });

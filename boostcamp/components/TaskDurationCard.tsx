@@ -1,8 +1,17 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  Pressable,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+
 import Svg, { Path } from 'react-native-svg';
-import ShortTaskSVG from "../SVG_Illustrations/Run - Health.svg";
-import MediumTaskSVG from "../SVG_Illustrations/Friends.svg";
-import LongTaskSVG from "../SVG_Illustrations/Location.svg";
+
+import ShortTaskSVG from '../SVG_Illustrations/Run - Health.svg';
+import MediumTaskSVG from '../SVG_Illustrations/Friends.svg';
+import LongTaskSVG from '../SVG_Illustrations/Location.svg';
 
 export default function TaskDurationCard({
   onPressHandler,
@@ -27,83 +36,86 @@ export default function TaskDurationCard({
   );
 
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPressHandler}>
       <>
-      {svgImage === "shortImage" ? <ShortTaskSVG style={styles.svgImage} width={140} height={140}/> : svgImage === "mediumImage" ? <MediumTaskSVG style = {styles.svgImage} width={140} height={140}/> : <LongTaskSVG style = {styles.svgImage} width={140} height={140}/>}
+        {svgImage === 'shortImage' ? (
+          <ShortTaskSVG style={styles.svgImage} width={'70%'} height={'70%'} />
+        ) : svgImage === 'mediumImage' ? (
+          <MediumTaskSVG style={styles.svgImage} width={'70%'} height={'70%'} />
+        ) : (
+          <LongTaskSVG style={styles.svgImage} width={'70%'} height={'70%'} />
+        )}
       </>
-      <Text style={styles.cardTitle}>{cardTitle}</Text>
-      <View style={styles.cardTextContainer}>
-        <Text style={styles.cardText}>{cardText}</Text>
+      <View style={styles.infoContainer}>
+        <Text style={styles.cardTitle}>{cardTitle}</Text>
+        <View style={styles.cardTextContainer}>
+          <Text style={styles.cardText}>{cardText}</Text>
+        </View>
+        <View style={[styles.button, { borderColor: borderColor }]}>
+          <Clock style={styles.clock} />
+          <Text style={styles.buttonText}>{buttonText}</Text>
+        </View>
       </View>
-      <Pressable
-        onPress={onPressHandler}
-        style={{ ...styles.button, borderColor: borderColor }}
-      >
-        <Clock style={styles.clock} />
-        <Text style={styles.buttonText}>{buttonText}</Text>
-      </Pressable>
-    </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    height: 200,
-    width: 380,
+    height: '30%',
+    width: '85%',
     borderWidth: 1.5,
     borderRadius: 10,
     borderColor: 'black',
-    marginBottom: 25,
+  },
+  infoContainer: {
+    width: '48%',
+    right: '5%',
+    height: '100%',
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
   },
   cardTitle: {
     fontFamily: 'Avenir',
     fontWeight: 'bold',
-    fontSize: 23,
-    top: 40,
-    left: 180,
+    fontSize: RFValue(18.4),
   },
   svgImage: {
-    position: "absolute",
-    fontSize: 20,
-    top: 20,
-    left: 15,
+    position: 'absolute',
+    fontSize: RFValue(16),
+    top: '15%',
+    right: '43%',
   },
   cardTextContainer: {
-    width: 158,
-    height: 50,
-    top: 45,
-    left: 180,
+    height: '30%',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
   cardText: {
-    fontFamily: 'Avenir',
     fontWeight: '100',
-    fontSize: 15,
+    fontFamily: 'Avenir',
+    fontSize: RFValue(12),
   },
   button: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    left: 180,
-    top: 50,
-    height: 43,
-    width: 175,
+    height: '25%',
+    width: '100%',
     borderWidth: 1.5,
     borderRadius: 12,
   },
   clock: {
-    right: 65,
-    top: 15,
+    right: '36%',
+    top: '33%',
   },
   buttonText: {
     display: 'flex',
-    textAlign: 'center',
     fontFamily: 'Avenir',
     fontWeight: 'bold',
-    fontSize: 22,
-    left: 18,
-    bottom: 12,
+    fontSize: RFValue(17.6),
+    left: '10%',
+    bottom: '33%',
   },
 });
