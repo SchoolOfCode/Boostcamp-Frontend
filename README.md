@@ -4,7 +4,7 @@
 
 1. Open Terminal.
 2. Cd Boostcamp.
-3. Npm i.
+3. Npm install.
 4. Create a .env file.
 5. Search team slack for API_URL and put into .env.
 6. Npm start.
