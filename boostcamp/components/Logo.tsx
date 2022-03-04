@@ -44,6 +44,5 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontWeight: 'bold',
     fontSize: RFValue(16),
-    // fontSize: 20,
   },
 });
